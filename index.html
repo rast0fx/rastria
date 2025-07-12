@@ -78,9 +78,6 @@
       :root {
         --space-dark: #1a2238;
         --space-darker: #0a0f1c;
-        --star-color: #a8b3cf;
-        --meteor-color: #6b8fd4;
-        --shooting-star-color: #e6f1ff;
         --space-accent: #121a2e;
         --card-bg: rgba(18, 24, 38, 0.8);
         --text-primary: #e0e6f0;
@@ -89,8 +86,8 @@
       
       body {
         font-family: 'Montserrat', sans-serif;
-        background: var(--space-darker);
-        background: linear-gradient(135deg, var(--space-darker) 0%, #131a2e 100%);
+        background: linear-gradient(135deg, #0a0f1c 0%, #0f172a 50%, #1e1b4b 100%);
+        background-attachment: fixed;
         color: var(--text-primary);
         overflow-x: hidden;
         min-height: 100vh;
@@ -99,39 +96,98 @@
       }
       
       section {
-        background: var(--space-darker);
+        position: relative;
+        overflow: hidden;
       }
-
-
       
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.8; }
-      }
-  
-      
-      .meteor {
-        position: fixed;
-        width: 200px;
-        height: 1px;
-        background: linear-gradient(90deg, 
-          rgba(74, 140, 255, 0) 0%, 
-          rgba(168, 199, 255, 0.8) 50%, 
-          rgba(74, 140, 255, 0) 100%);
-        transform: rotate(-45deg);
-        animation: meteorFall 4s linear infinite;
-        opacity: 0;
+      /* Background shapes */
+      .bg-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: 0;
+        opacity: 0.1;
         pointer-events: none;
-        filter: drop-shadow(0 0 10px rgba(168, 199, 255, 0.6));
       }
       
-      @keyframes meteorFall {
-        0% { transform: translateY(-50px) rotate(-45deg); opacity: 1; }
-        80% { opacity: 0.8; }
-        100% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.6;
+        animation: float 25s infinite ease-in-out;
       }
-      /* Shooting animation removed */
+      
+      .shape-1 {
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(45deg, #4f46e5, #7c3aed);
+        top: -300px;
+        right: -200px;
+        animation-delay: 0s;
+      }
+      
+      .shape-2 {
+        width: 800px;
+        height: 800px;
+        background: linear-gradient(45deg, #2563eb, #3b82f6);
+        bottom: -400px;
+        left: -300px;
+        animation-delay: 5s;
+      }
+      
+      .shape-3 {
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(45deg, #7c3aed, #a78bfa);
+        top: 50%;
+        right: 10%;
+        animation-delay: 10s;
+      }
+      
+      .shape-4 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(45deg, #3b82f6, #60a5fa);
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 15s;
+      }
+      
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+        50% {
+          transform: translateY(0) rotate(0deg);
+        }
+        75% {
+          transform: translateY(20px) rotate(-5deg);
+        }
+      }
+
+
+      
+      /* Hero animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
       .parallax {
       background-attachment: fixed;
       background-position: center;
@@ -169,21 +225,7 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       }
-      .star-field {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      }
-      .star {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      background: white;
-      border-radius: 50%;
-      }
+      /* Star field removed */
       /* Reveal Animations */
       .section-reveal {
         opacity: 0;
@@ -244,7 +286,7 @@
             <a
             href="#partnership"
             class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-            >Partners</a
+            >Partner</a
           >
             <a
               href="#faq"
@@ -287,7 +329,7 @@
         <a
             href="#partnership"
             class="text-white hover:bg-white/10 px-4 py-3 rounded-lg transition-colors text-lg font-medium"
-            >Partners</a
+            >Partner</a
           >
           <a
             href="#faq"
@@ -298,10 +340,15 @@
       </div>
     </nav>
     <!-- Hero Section -->
-    <section
-      id="hero"
-      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    <section id="hero"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10"
     >
+      <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
       <div class="absolute inset-0" id="star-field"></div>
       <div class="container mx-auto px-6 z-10">
         <div class="text-center max-w-3xl mx-auto">
@@ -333,9 +380,11 @@
       </div>
     </section>
     <!-- About Us -->
-    <section id="about" class="py-24 relative overflow-hidden" data-stars>
-      <!-- Star Background -->
-      <div class="absolute inset-0" id="about-stars"></div>
+    <section id="about" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+      <div class="bg-shapes">
+        <div class="shape shape-1" style="top: 20%; left: -10%;"></div>
+        <div class="shape shape-3" style="bottom: 10%; right: -5%;"></div>
+      </div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4 text-white">About Us</h2>
@@ -362,7 +411,7 @@
                 Join Discord
               </a>
               <a
-              href="https://www.roblox.com/communities/35703952/robuxrastosia#!/about"
+              href="https://www.roblox.com/communities/35949805/U-OPI-Industries#!/about"
               class="inline-flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-3 rounded-button transition-colors duration-300 whitespace-nowrap"
             >
               <i class="ri-information-fill ri-lg"></i>
@@ -387,7 +436,7 @@
       </div>
     </section>
     <!-- Organizations Section -->
-    <section id="organizations" class="py-24 relative overflow-hidden bg-[#0a0f1c]" data-stars>
+    <section id="organizations" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10" data-stars>
       <!-- Star Background -->
       <div class="absolute inset-0" id="organizations-stars"></div>
       <div class="container mx-auto px-6 relative z-10">
@@ -422,9 +471,11 @@
       </div>
     </section>
     <!-- Ordering Section -->
-    <section id="order" class="py-24 relative overflow-hidden">
-      <!-- Star Background -->
-      <div class="absolute inset-0" id="clothing-stars"></div>
+    <section id="order" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+      <div class="bg-shapes">
+        <div class="shape shape-2" style="top: 10%; right: -15%;"></div>
+        <div class="shape shape-4" style="bottom: 20%; left: -10%;"></div>
+      </div>
       <div class="container mx-auto px-6 relative z-10">
         <h2 class="text-4xl font-bold mb-4 text-center">How To Order From Rastria</h2>
         <div class="w-24 h-1 bg-white mx-auto mb-16"></div>
@@ -526,100 +577,95 @@ Extra Notes / Attachments:
     </section>
 
     <!-- Partnership Section -->
-    <section id="partnership" class="py-24 relative overflow-hidden">
-      <!-- Star Background -->
-      <div class="absolute inset-0" id="partnership-stars"></div>
+    <section id="partnership" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+      <div class="bg-shapes">
+        <div class="shape shape-1" style="top: 30%; right: -10%;"></div>
+        <div class="shape shape-3" style="bottom: 20%; left: -5%;"></div>
+      </div>
       <div class="container mx-auto px-6 relative z-10">
-        <h2 class="text-4xl font-bold mb-4 text-center">Our Partners</h2>
-        <div class="w-24 h-1 bg-white mx-auto mb-16"></div>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-white">Partnership Program</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
         
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-16">
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-              At <span class="text-white font-semibold">Rastria</span>, we value community and collaboration. Our partners help us grow, connect, and share value across different spaces. 
-              Whether you're a server owner, brand, or community manager, partnering with us means building a strong connection that benefits both sides.
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-2xl">
+          <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Rastria Partnership Requirements</h3>
+            <p class="text-gray-300 text-lg">
+              We're always open to forming meaningful and mutually beneficial partnerships with communities, creators, and studios.
             </p>
           </div>
-
-          <div class="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <span class="text-green-400">✅</span> Become a Partner
-            </h3>
-            <p class="text-gray-300 mb-8">
-              Want to partner with us? It's easy! Here's how:
-            </p>
-
-            <div class="space-y-8">
-              <!-- Step 1 -->
-              <div class="flex flex-col md:flex-row gap-4">
-                <div class="bg-blue-500/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <span class="text-2xl">🔹</span>
+          
+          <div class="space-y-6 mb-12">
+            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+              <h4 class="text-xl font-bold text-white mb-4 flex items-center">
+                <i class="ri-shield-check-line ri-xl mr-3 text-purple-400"></i>
+                Before applying, please ensure your Discord server or organization meets the following criteria:
+              </h4>
+              <ul class="space-y-3 text-gray-300 pl-2">
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>Your community must be <span class="font-semibold text-white">active</span> and <span class="font-semibold text-white">well-managed</span>.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>Your Discord server must have <span class="font-semibold text-white">at least 50 members</span>.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>You must have a <span class="font-semibold text-white">partner section or channel</span> where Rastria can be promoted.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>Content must be <span class="font-semibold text-white">safe</span>, <span class="font-semibold text-white">respectful</span>, and <span class="font-semibold text-white">SFW</span> (no NSFW, hate speech, or harmful activity).</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>A member of your team must be available to <span class="font-semibold text-white">communicate directly</span> with us.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>Your server should have a <span class="font-semibold text-white">clean design</span>, <span class="font-semibold text-white">clear structure</span>, and <span class="font-semibold text-white">basic moderation</span> in place.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
+                  <span>You must be willing to <span class="font-semibold text-white">promote Rastria</span> in return (via a message, embed, or permanent mention).</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded-r">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <i class="ri-alert-fill text-yellow-400 text-xl"></i>
                 </div>
-                <div>
-                  <h4 class="text-xl font-semibold text-white mb-2">Step 1: Join Our Discord</h4>
-                  <p class="text-gray-300">
-                    All partnership requests are handled through our 
-                    <a href="https://discord.gg/qpbZrNrMYJ" target="_blank" class="text-blue-400 hover:underline">Discord server</a>. 
-      
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="flex flex-col md:flex-row gap-4">
-                <div class="bg-blue-500/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <span class="text-2xl">🔹</span>
-                </div>
-                <div>
-                  <h4 class="text-xl font-semibold text-white mb-2">Step 2: Open a Ticket</h4>
-                  <p class="text-gray-300">
-                    In the <code class="bg-gray-800/50 px-2 py-1 rounded">#support</code> channel, choose the 
-                    <span class="font-medium">"Partnership"</span> option. This will open a private channel where you can apply.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="flex flex-col md:flex-row gap-4">
-                <div class="bg-blue-500/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <span class="text-2xl">🔹</span>
-                </div>
-                <div class="flex-1">
-                  <h4 class="text-xl font-semibold text-white mb-2">Step 3: Fill Out the Application</h4>
-                  <p class="text-gray-300 mb-4">
-                    Inside your ticket, please provide:
-                  </p>
-                  <div class="bg-gray-900/50 p-4 rounded-lg font-mono text-sm text-gray-300 overflow-x-auto mb-4">
-                    <div class="whitespace-pre">
-Name: (@yourself or your username)
-Server Name: (Full name of your Discord server)
-Server Invite Link: (Permanent or vanity invite link)
-
-Server Description:
-(What is your server about? What's its purpose or theme?)
-
-Member Count: (Current total and active members)
-
-Why Do You Want to Partner With Rastria?
-(A few sentences explaining your interest)
-
-What Can You Offer in the Partnership?
-(How will you promote Rastria? What benefits are mutual?)
-
-Do You Meet Our Requirements? (Yes/No):
-(e.g. Minimum members, no NSFW, active community, etc.)
-
-Anything Else You'd Like to Add?
-(Optional notes, questions, or clarifications)
-                    </div>
-                  </div>
-                  <p class="text-gray-300">
-                    We'll review your request and get back to you as soon as possible.
+                <div class="ml-3">
+                  <p class="text-yellow-100 font-medium">
+                    We reserve the right to deny any partnership that does not align with Rastria's values of professionalism, creativity, and respect.
                   </p>
                 </div>
               </div>
             </div>
           </div>
+          
+          <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/30 p-6 rounded-lg border border-blue-500/20">
+            <h4 class="text-2xl font-bold text-white mb-4 flex items-center">
+              <i class="ri-mail-send-line ri-xl mr-3 text-blue-400"></i>
+              Interested in Partnering?
+            </h4>
+            <p class="text-gray-300 mb-6">
+              Submit a request through our ticket system in the <span class="font-medium text-white">#support</span> channel on our Discord server.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="https://discord.gg/gknCbzqUp7" 
+                target="_blank" 
+                class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300"
+              >
+                <i class="ri-discord-fill ri-lg mr-2"></i>
+                Join Our Discord
+              </a>
+              
             </div>
           </div>
         </div>
@@ -627,7 +673,11 @@ Anything Else You'd Like to Add?
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 relative overflow-hidden bg-[#0a0f1c]">
+    <section id="faq" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+      <div class="bg-shapes">
+        <div class="shape shape-2" style="top: -10%; left: -15%;"></div>
+        <div class="shape shape-4" style="bottom: 10%; right: -10%;"></div>
+      </div>
         <!-- Star Background -->
         <div class="absolute inset-0" id="faq-stars"></div>
         <div class="container mx-auto px-6 relative z-10">
@@ -738,12 +788,10 @@ Anything Else You'd Like to Add?
 
     <!-- Footer -->
     <footer id="footer" class="py-12 relative overflow-hidden bg-[#0a0f1c]">
-      <!-- Star Background -->
-      <div class="absolute inset-0" id="footer-stars"></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-8 md:mb-0">
-            <a href="#" class="text-2xl font-['Pacifico'] text-white">Rastria</a>
+            <a href="#" class="text-2xl font-[''] text-white">Rastria</a>
             <p class="text-gray-400 mt-2">©2025. All Rights Reserved</p>
             <div class="flex space-x-6 mt-4">
               <button onclick="openModal('privacy-modal')" class="text-blue-400 hover:underline text-sm">Privacy Policy</button>
@@ -962,191 +1010,60 @@ Anything Else You'd Like to Add?
         });
       });
     </script>
-    <div class="stars" id="stars"></div>
-    <script id="space-effects">
-      // Create stars for a specific container
-      function createStars(container, count = 30, sizeMultiplier = 1) {
-        if (!container) return;
-        const fragment = document.createDocumentFragment();
-        for (let i = 0; i < count; i++) {
-          const star = document.createElement('div');
-          const size = (0.5 + Math.random() * 1.5) * sizeMultiplier;
-          const posX = Math.random() * 100;
-          const posY = Math.random() * 100;
-          const duration = 3 + Math.random() * 4;
-          const delay = Math.random() * 5;
-          const opacity = 0.2 + Math.random() * 0.6;
-          star.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${posX}%;
-            top: ${posY}%;
-            background-color: var(--star-color);
-            border-radius: 50%;
-            animation: twinkle ${duration}s ease-in-out ${delay}s infinite;
-            opacity: ${opacity};
-            will-change: transform, opacity;
-            pointer-events: none !important;
-            touch-action: none;
-            -webkit-tap-highlight-color: transparent;
-            z-index: 0;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;`;
-          
-          fragment.appendChild(star);
-        }
-        
-        container.appendChild(fragment);
-      }
-      
-      // Create stars for all sections
-      function initAllStars() {
-        // Hero section (more stars)
-        const heroStars = document.getElementById('star-field');
-        if (heroStars) createStars(heroStars, 100, 1.2);
-        
-        // About section
-        const aboutStars = document.getElementById('about-stars');
-        if (aboutStars) createStars(aboutStars, 60, 1.0);
-        
-        // UTOPIA section
-        const utopiaStars = document.getElementById('utopia-stars');
-        if (utopiaStars) createStars(utopiaStars, 60, 1.0);
-        
-        // Organizations section
-        const orgStars = document.getElementById('organizations-stars');
-        if (orgStars) createStars(orgStars, 60, 1.0);
-        
-        // Clothing section
-        const clothingStars = document.getElementById('clothing-stars');
-        if (clothingStars) createStars(clothingStars, 60, 1.0);
-        
-        // FAQ section
-        const faqStars = document.getElementById('faq-stars');
-        if (faqStars) createStars(faqStars, 60, 1.0);
-        
-        // Footer section
-        const footerStars = document.getElementById('footer-stars');
-        if (footerStars) createStars(footerStars, 40, 0.8);
-      }
-      
-      // Shooting stars functionality removed
-      
-      // Create meteors
-      function createMeteor() {
-        const meteor = document.createElement('div');
-        meteor.className = 'meteor';
-        meteor.style.left = `${Math.random() * 100}%`; // Full width coverage
-        meteor.style.top = `${-100}px`;
-        meteor.style.opacity = '0';
-        meteor.style.width = `${100 + Math.random() * 150}px`; // Smaller meteors
-        meteor.style.filter = `hue-rotate(${Math.random() * 60 - 30}deg) brightness(1.5)`; // Slight color variation
-        document.body.appendChild(meteor);
-        
-        // Remove meteor after animation
-        setTimeout(() => {
-          meteor.remove();
-        }, 4000);
-      }
-      
-      // Initialize everything when the DOM is loaded
-      document.addEventListener('DOMContentLoaded', () => {
-        // Initialize stars for all sections
-        initAllStars();
-        
-        // Initialize stars for utopia section
-        createStars(document.getElementById('utopia-stars'), 100, 1.5);
-        
-        // Initialize stars for clothing section
-        createStars(document.getElementById('clothing-stars'), 100, 1.5);
-        
-        // Initialize stars specifically for FAQ section with lower z-index
-        const faqStarsContainer = document.getElementById('faq-stars');
-        if (faqStarsContainer) {
-          createStars(faqStarsContainer, 40, 0.8);
-        }
-        
-        // Create meteors less frequently
-        setInterval(createMeteor, 4000);
+    <script id="clothing-filter-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const categoryButtons = document.querySelectorAll(".category-btn");
+        const clothingItems = document.querySelectorAll(".clothing-card");
+        categoryButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            categoryButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+            // Get category
+            const category = this.getAttribute("data-category");
+            // Filter items
+            clothingItems.forEach((item) => {
+              const itemCategory = item.getAttribute("data-category");
+              if (category === "all") {
+                if (itemCategory === "all") {
+                  item.classList.remove("hidden");
+                } else {
+                  item.classList.add("hidden");
+                }
+              } else if (itemCategory === category) {
+                item.classList.remove("hidden");
+              } else {
+                item.classList.add("hidden");
+              }
+            });
+          });
+        });
       });
     </script>
-    
     <script id="hero-animation-script">
       document.addEventListener("DOMContentLoaded", function () {
         // Hero section animations
+        const heroTitle = document.getElementById('hero-title');
+        const heroSubtitle = document.getElementById('hero-subtitle');
+        const heroCta = document.getElementById('hero-cta');
+        
+        // Animate hero elements with a slight delay between each
         setTimeout(() => {
-          document
-            .getElementById("hero-title")
-            .classList.add("opacity-100", "translate-y-0");
-          document
-            .getElementById("hero-title")
-            .classList.remove("opacity-0", "translate-y-10");
+          heroTitle.classList.add('opacity-100', 'translate-y-0');
+          heroTitle.classList.remove('opacity-0', 'translate-y-10');
+          
           setTimeout(() => {
-            document
-              .getElementById("hero-subtitle")
-              .classList.add("opacity-100", "translate-y-0");
-            document
-              .getElementById("hero-subtitle")
-              .classList.remove("opacity-0", "translate-y-10");
+            heroSubtitle.classList.add('opacity-100', 'translate-y-0');
+            heroSubtitle.classList.remove('opacity-0', 'translate-y-10');
+            
             setTimeout(() => {
-              document
-                .getElementById("hero-cta")
-                .classList.add("opacity-100", "translate-y-0");
-              document
-                .getElementById("hero-cta")
-                .classList.remove("opacity-0", "translate-y-10");
+              heroCta.classList.add('opacity-100', 'translate-y-0');
+              heroCta.classList.remove('opacity-0', 'translate-y-10');
             }, 200);
           }, 200);
-        }, 500);
-        // Create star field
-        const starField = document.getElementById("star-field");
-        const numberOfStars = 200;
-        for (let i = 0; i < numberOfStars; i++) {
-          const star = document.createElement("div");
-          star.classList.add("star");
-          // Random position
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          // Random size
-          const size = Math.random() * 2;
-          // Random opacity
-          const opacity = Math.random() * 0.8 + 0.2;
-          star.style.left = `${x}%`;
-          star.style.top = `${y}%`;
-          star.style.width = `${size}px`;
-          star.style.height = `${size}px`;
-          star.style.opacity = opacity;
-          starField.appendChild(star);
-        }
-        // Create shooting stars
-        function createShootingStar() {
-          const shootingStar = document.createElement("div");
-          shootingStar.classList.add("shooting-star");
-          // Random starting position
-          const startX = Math.random() * 20;
-          const startY = Math.random() * 20;
-          shootingStar.style.left = `${startX}%`;
-          shootingStar.style.top = `${startY}%`;
-          // Random animation duration
-          const duration = Math.random() * 3 + 2;
-          shootingStar.style.animationDuration = `${duration}s`;
-          // Random delay
-          const delay = Math.random() * 5;
-          shootingStar.style.animationDelay = `${delay}s`;
-          document.getElementById("hero").appendChild(shootingStar);
-          // Remove after animation completes
-          setTimeout(
-            () => {
-              shootingStar.remove();
-            },
-            (duration + delay) * 1000,
-          );
-        }
-        // Create shooting stars periodically
-        setInterval(createShootingStar, 2000);
+        }, 300);
+        
         // Clothing popup functionality
         const clothingItems = document.querySelectorAll('.clothing-card');
         const popup = document.getElementById('clothing-popup');
@@ -1226,11 +1143,6 @@ Anything Else You'd Like to Add?
             document.body.style.overflow = 'auto';
           }
         });
-
-        // Initial shooting stars
-        for (let i = 0; i < 5; i++) {
-          createShootingStar();
-        }
       });
     </script>
     <script id="parallax-script">
