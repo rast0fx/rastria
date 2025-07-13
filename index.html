@@ -76,23 +76,43 @@
 
       
       :root {
-        --space-dark: #1a2238;
-        --space-darker: #0a0f1c;
-        --space-accent: #121a2e;
-        --card-bg: rgba(18, 24, 38, 0.8);
-        --text-primary: #e0e6f0;
-        --text-secondary: #a8b3cf;
+        --space-dark: #0a0f1c;
+        --space-darker: #000000;
+        --space-accent: #000033;
+        --card-bg: rgba(255, 255, 255, 0.1);
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
       }
       
       body {
         font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #0a0f1c 0%, #0f172a 50%, #1e1b4b 100%);
+        background: linear-gradient(135deg, #000000 0%, #000033 50%, #000066 100%);
         background-attachment: fixed;
+        background-size: cover;
         color: var(--text-primary);
         overflow-x: hidden;
         min-height: 100vh;
         position: relative;
         line-height: 1.6;
+      }
+      
+      section {
+        background: linear-gradient(135deg, #000000 0%, #000033 50%, #000066 100%);
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+      }
+      
+      section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        z-index: -1;
       }
       
       section {
@@ -123,7 +143,7 @@
       .shape-1 {
         width: 600px;
         height: 600px;
-        background: linear-gradient(45deg, #4f46e5, #7c3aed);
+        background: linear-gradient(45deg, #0000ff, #0066ff);
         top: -300px;
         right: -200px;
         animation-delay: 0s;
@@ -132,7 +152,7 @@
       .shape-2 {
         width: 800px;
         height: 800px;
-        background: linear-gradient(45deg, #2563eb, #3b82f6);
+        background: linear-gradient(45deg, #0000cc, #3366ff);
         bottom: -400px;
         left: -300px;
         animation-delay: 5s;
@@ -141,7 +161,7 @@
       .shape-3 {
         width: 400px;
         height: 400px;
-        background: linear-gradient(45deg, #7c3aed, #a78bfa);
+        background: linear-gradient(45deg, #0000aa, #4d4dff);
         top: 50%;
         right: 10%;
         animation-delay: 10s;
@@ -150,7 +170,7 @@
       .shape-4 {
         width: 300px;
         height: 300px;
-        background: linear-gradient(45deg, #3b82f6, #60a5fa);
+        background: linear-gradient(45deg, #0000ff, #6699ff);
         bottom: 20%;
         left: 20%;
         animation-delay: 15s;
@@ -225,18 +245,7 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       }
-      /* Star field removed */
-      /* Reveal Animations */
-      .section-reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-      
-      .section-reveal.reveal-active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    
       /* FAQ */
       .faq-item {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -366,7 +375,7 @@
           We deliver high-performance, clean, and user-friendly designs.
           </p>
           <a
-            href="#about"
+            href="#order"
             class="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-all duration-300 opacity-0 transform translate-y-10 !rounded-button whitespace-nowrap"
             id="hero-cta"
             >Get Started</a
@@ -376,11 +385,11 @@
       <div
         class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
       >
-        <i class="ri-arrow-down-line ri-2x text-white"></i>
+  
       </div>
     </section>
     <!-- About Us -->
-    <section id="about" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+    <section id="about" class="py-24 relative overflow-hidden">
       <div class="bg-shapes">
         <div class="shape shape-1" style="top: 20%; left: -10%;"></div>
         <div class="shape shape-3" style="bottom: 10%; right: -5%;"></div>
@@ -436,42 +445,51 @@
       </div>
     </section>
     <!-- Organizations Section -->
-    <section id="organizations" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10" data-stars>
-      <!-- Star Background -->
-      <div class="absolute inset-0" id="organizations-stars"></div>
+    <section id="organizations" class="py-24 relative overflow-hidden">
+      <div class="bg-shapes">
+        <div class="shape shape-1" style="top: 20%; right: -15%;"></div>
+        <div class="shape shape-3" style="bottom: 10%; left: -5%;"></div>
+      </div>
       <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-white">Our Team</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
         
-       
-        <div class="max-w-md mx-auto bg-white/5 backdrop-blur-sm rounded-xl p-8 transform hover:scale-105 transition-all duration-300 border border-white/10 overflow-hidden group shadow-xl">
-          <div class="text-center">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-blue-600/50">
-              <img src="https://i.postimg.cc/Bn2jyV4D/Your-idea-1.png" 
-                   alt="Profile Picture" 
-                   class="w-full h-full object-cover">
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2">rast0fx</h3>
-            <p class="text-gray-200 mb-6">Founder & Director</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-              <a href="https://discord.com/users/954061819952132106" 
-                 target="_blank" 
-                 class="flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap group">
-                <i class="ri-discord-fill ri-lg group-hover:scale-110 transition-transform"></i>
-                <span>Discord</span>
-              </a>
-              <a href="https://mkoussa.netlify.app/" 
-                 target="_blank" 
-                 class="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap group">
-                <i class="ri-briefcase-4-line ri-lg group-hover:scale-110 transition-transform"></i>
-                <span>Portfolio</span>
-              </a>
+        <div class="flex justify-center">
+          <div class="w-full max-w-md">
+            <div class="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 shadow-2xl">
+            <div class="text-center">
+              <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-blue-500/50 p-1">
+                <img src="https://i.postimg.cc/Bn2jyV4D/Your-idea-1.png" 
+                     alt="Profile Picture" 
+                     class="w-full h-full object-cover rounded-full">
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">rast0fx</h3>
+              <p class="text-blue-300 font-medium mb-4">Founder & Director</p>
+             
+              <div class="flex justify-center space-x-4">
+                <a href="https://discord.com/users/954061819952132106" 
+                   target="_blank" 
+                   class="w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 rounded-full text-white transition-colors duration-300">
+                  <i class="ri-discord-fill ri-lg"></i>
+                </a>
+                <a href="https://mkoussa.netlify.app/" 
+                   target="_blank" 
+                   class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-full text-white transition-colors duration-300">
+                  <i class="ri-briefcase-4-line ri-lg"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        </div>
+        
+        <!-- Add more team members here with the same structure inside the flex container -->
+        
       </div>
     </section>
     <!-- Ordering Section -->
-    <section id="order" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+    <section id="order" class="py-24 relative overflow-hidden">
       <div class="bg-shapes">
         <div class="shape shape-2" style="top: 10%; right: -15%;"></div>
         <div class="shape shape-4" style="bottom: 20%; left: -10%;"></div>
@@ -577,7 +595,7 @@ Extra Notes / Attachments:
     </section>
 
     <!-- Partnership Section -->
-    <section id="partnership" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+    <section id="partnership" class="py-24 relative overflow-hidden">
       <div class="bg-shapes">
         <div class="shape shape-1" style="top: 30%; right: -10%;"></div>
         <div class="shape shape-3" style="bottom: 20%; left: -5%;"></div>
@@ -588,7 +606,7 @@ Extra Notes / Attachments:
           <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
         
-        <div class="max-w-4xl mx-auto bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-2xl">
+        <div class="max-w-4xl mx-auto bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-2xl">
           <div class="text-center mb-12">
             <h3 class="text-3xl font-bold text-white mb-4">Rastria Partnership Requirements</h3>
             <p class="text-gray-300 text-lg">
@@ -673,7 +691,7 @@ Extra Notes / Attachments:
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 relative overflow-hidden bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10">
+    <section id="faq" class="py-24 relative overflow-hidden">
       <div class="bg-shapes">
         <div class="shape shape-2" style="top: -10%; left: -15%;"></div>
         <div class="shape shape-4" style="bottom: 10%; right: -10%;"></div>
@@ -787,7 +805,7 @@ Extra Notes / Attachments:
       </section>
 
     <!-- Footer -->
-    <footer id="footer" class="py-12 relative overflow-hidden bg-[#0a0f1c]">
+    <footer id="footer" class="py-12 relative overflow-hidden">
       <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-8 md:mb-0">
@@ -1158,35 +1176,7 @@ Extra Notes / Attachments:
         });
       });
     </script>
-    <!-- Reveal on Scroll Animation -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Get all sections except hero
-        const sections = document.querySelectorAll('section:not(#hero)');
-        
-        // Add reveal class to all sections
-        sections.forEach(section => {
-          section.classList.add('section-reveal');
-        });
-
-        // Create Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('reveal-active');
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        });
-
-        // Observe each section
-        sections.forEach(section => {
-          observer.observe(section);
-        });
-      });
-    </script>
+   
     
     <script id="clothing-filter-script">
       document.addEventListener("DOMContentLoaded", function () {
