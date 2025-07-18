@@ -928,7 +928,7 @@ Extra Notes / Attachments:
         <div class="max-w-2xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/50">
          
           <div class="p-8">
-            <form action="https://formspree.io/f/xkgzgpgr" method="POST" id="feedbackForm" class="space-y-6">
+            <form action="https://formspree.io/f/mldldpqr" method="POST" id="feedbackForm" class="space-y-6">
               <input type="hidden" id="type" name="type" value="feedback">
               <!-- Name Field -->
               <div class="group relative">
@@ -1459,26 +1459,8 @@ Extra Notes / Attachments:
             `;
             
             try {
-              // In a real implementation, you would send the form data to Formspree or your backend
+              // Submit to Formspree
               const formData = new FormData(this);
-              
-              // Simulate API call with a delay
-              await new Promise(resolve => setTimeout(resolve, 1500));
-              
-              // Show success message
-              if (successMessage) {
-                feedbackForm.reset();
-                successMessage.classList.remove('hidden');
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                  successMessage.classList.add('hidden');
-                }, 5000);
-              }
-              
-              // Here's how you would submit to Formspree in a real implementation:
-              /*
               const response = await fetch(this.action, {
                 method: 'POST',
                 body: formData,
@@ -1488,18 +1470,18 @@ Extra Notes / Attachments:
               });
               
               if (response.ok) {
+                // Show success message
                 feedbackForm.reset();
-                successMessage.classList.remove('hidden');
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                  successMessage.classList.add('hidden');
-                }, 5000);
-              } else {
-                throw new Error('Form submission failed');
+                if (successMessage) {
+                  successMessage.classList.remove('hidden');
+                  successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  
+                  // Hide success message after 5 seconds
+                  setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                  }, 5000);
+                }
               }
-              */
             } catch (error) {
               console.error('Error:', error);
               // Show error message
