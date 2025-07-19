@@ -1,1781 +1,1913 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="google-site-verification" content="q_Njx1eHX2LMnehgpm-4UpwES6JkA_RrSY9ioYnC1WU" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rastria</title>
-    <meta name="description" content="Rastria - Creative Design & Web Development Solutions">
-    <meta name="keywords" content="rastria web dev, web design, website development, custom websites, responsive design, e-commerce solutions, brand identity, UI/UX design, digital marketing, web development agency, creative design solutions, professional web services, modern web design, website redesign, online presence, web solutions">
-    <meta name="author" content="Rastria">
+<head>
+    <!-- Character Encoding & Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="oGC6WZroq3fMx8mIX6cM2QpWBJ4hGDVzGame4TrQALo" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:; frame-ancestors 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Primary Meta Tags -->
+    <title>SharpVision | Roblox Game Development</title>
+    <meta name="description" content="🎮 Discover premium Roblox games by SharpVision! We're more than just a game studio. We're a passionate team dedicated to creating extraordinary experiences on Roblox. Focused on quality, community, and creativity — that's the SharpVision way.">
+    <meta name="keywords" content="SharpVision, SharpVision Games, Roblox games, Roblox development, Roblox studio, game development, Roblox experiences, multiplayer games, SharpVision Games, Roblox gaming">
+    <meta name="author" content="SharpVision">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0a0f1c">
-    <link rel="icon" type="image/webp" href="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png">
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#0099ff">
+    <meta name="msapplication-TileColor" content="#0099ff">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <link rel="shortcut icon" href="https://i.postimg.cc/430z06sx/image-removebg-preview.png" type="image/png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sharpvision.io/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rastria.netlify.app/">
-    <meta property="og:title" content="Rastria - Creative Design & Web Development Solutions">
-    <meta property="og:description" content="Welcome to Rastria - Your premier destination for innovative design and creative solutions">
-    <meta property="og:image" content="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png">
+    <meta property="og:url" content="https://www.sharpvision.io/">
+    <meta property="og:title" content="SharpVision | Premium Roblox Game Development">
+    <meta property="og:description" content="🎮 Discover premium Roblox games by SharpVision! We're more than just a game studio. We're a passionate team dedicated to creating extraordinary experiences on Roblox. Focused on quality, community, and creativity — that's the SharpVision way.">
+    <meta property="og:image" content="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <meta property="og:site_name" content="SharpVision">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://rastria.netlify.app/">
-    <meta property="twitter:title" content="Rastria - Creative Design & Web Development Solutions">
-    <meta property="twitter:description" content="Welcome to Rastria - Your premier destination for innovative design and creative solutions">
-    <meta property="twitter:image" content="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <style>
-      body, button, input, textarea, select {
-        font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-      }
-      /* --- Modern Color Palette & Gradients --- */
-      :root {
-        --space-dark: #0a0f1c;
-        --space-darker: #000000;
-        --space-accent: #1a1a40;
-        --primary-gradient: linear-gradient(135deg, #1a1a40 0%, #2d2d6a 50%, #4f4fa6 100%);
-        --accent-gradient: linear-gradient(90deg, #5865F2 0%, #a18fff 100%);
-        --card-bg: rgba(255, 255, 255, 0.07);
-        --card-bg-darker: rgba(10, 15, 28, 0.95);
-        --glass-bg: rgba(20, 24, 40, 0.7);
-        --text-primary: #fff;
-        --text-secondary: #b3b8d0;
-        --text-accent: #a18fff;
-        --border-glass: rgba(255,255,255,0.12);
-      }
-      body {
-        background: var(--primary-gradient);
-        background-attachment: fixed;
-        color: var(--text-primary);
-        min-height: 100vh;
-        line-height: 1.7;
-        letter-spacing: 0.01em;
-      }
-      /* --- Typography --- */
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Montserrat', 'Inter', sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        color: #fff;
-      }
-      h1 { font-size: 2.8rem; }
-      h2 { font-size: 2.2rem; }
-      h3 { font-size: 1.5rem; }
-      @media (max-width: 768px) {
-        h1 { font-size: 2rem; }
-        h2 { font-size: 1.5rem; }
-        h3 { font-size: 1.1rem; }
-      }
-      p, li, ul, ol, a, span, div {
-        font-family: 'Inter', 'Montserrat', sans-serif;
-        font-weight: 400;
-        color: var(--text-secondary);
-      }
-      /* --- Spacing & Card Styles --- */
-      section {
-        padding: 4rem 0;
-        margin-bottom: 2rem;
-        background: transparent;
-        position: relative;
-        z-index: 1;
-      }
-      .card, .bg-card, .faq-item, .bg-white\/5, .backdrop-blur-sm {
-        background: var(--card-bg-darker) !important;
-        border-radius: 1.25rem !important;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        border: 1px solid var(--border-glass);
-        backdrop-filter: blur(12px);
-      }
-      .faq-item {
-        margin-bottom: 1.5rem;
-        transition: box-shadow 0.3s;
-      }
-      .faq-item.active {
-        box-shadow: 0 4px 24px 0 rgba(88, 101, 242, 0.15);
-      }
-      /* --- Buttons & CTAs --- */
-      .btn, .rounded-button, .inline-block.bg-transparent, .category-btn {
-        background: var(--accent-gradient) !important;
-        color: #fff !important;
-        border: none !important;
-        border-radius: 999px !important;
-        box-shadow: 0 2px 8px 0 rgba(88, 101, 242, 0.15);
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-      }
-      .btn:hover, .rounded-button:hover, .inline-block.bg-transparent:hover, .category-btn:hover {
-        background: linear-gradient(90deg, #a18fff 0%, #5865F2 100%) !important;
-        box-shadow: 0 4px 16px 0 rgba(88, 101, 242, 0.25);
-        transform: translateY(-2px) scale(1.03);
-      }
-      /* --- Navbar Glassmorphism --- */
-      nav {
-        background: var(--glass-bg) !important;
-        box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.10);
-        border-bottom: 1px solid var(--border-glass);
-        backdrop-filter: blur(16px);
-      }
-      .nav-link {
-        font-weight: 500;
-        color: #fff !important;
-        position: relative;
-        transition: color 0.2s;
-      }
-      .nav-link.active, .nav-link:hover {
-        color: var(--text-accent) !important;
-      }
-      .nav-link::after {
-        background: var(--accent-gradient);
-        height: 3px;
-        border-radius: 2px;
-      }
-      /* --- Footer --- */
-      footer {
-        background: var(--glass-bg);
-        border-top: 1px solid var(--border-glass);
-        box-shadow: 0 -2px 16px 0 rgba(31, 38, 135, 0.10);
-        padding: 2.5rem 0 1.5rem 0;
-      }
-      footer a, footer p {
-        color: var(--text-secondary) !important;
-      }
-      footer a:hover {
-        color: var(--text-accent) !important;
-      }
-      /* --- Section Reveal Animation --- */
-      .section-reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-      }
-      .reveal-active {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-      }
-      /* --- Responsive Improvements --- */
-      @media (max-width: 768px) {
-        section {
-          padding: 2.5rem 0;
-        }
-        .container, .max-w-4xl, .max-w-3xl, .max-w-md {
-          padding-left: 1rem !important;
-          padding-right: 1rem !important;
-        }
-        .card, .bg-card, .faq-item, .bg-white\/5, .backdrop-blur-sm {
-          border-radius: 1rem !important;
-        }
-        .btn, .rounded-button, .inline-block.bg-transparent, .category-btn {
-          padding: 0.6rem 1.2rem;
-          font-size: 1rem;
-        }
-      }
-      /* --- Miscellaneous --- */
-      .shadow-xl, .shadow-2xl {
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18) !important;
-      }
-      .rounded-lg, .rounded-xl, .rounded-full {
-        border-radius: 1.25rem !important;
-      }
-      .border-blue-500\/50 {
-        border-color: #5865F2 !important;
-      }
-      /* --- Mobile performance improvements --- */
-      @media (max-width: 768px) {
-        .parallax, body {
-          background-attachment: scroll !important;
-          background-position: center !important;
-        }
-        .bg-shapes, .shape {
-          filter: blur(30px) !important;
-          opacity: 0.3 !important;
-        }
-        section {
-          background-attachment: scroll !important;
-        }
-      }
-      /* Prevent horizontal scroll on mobile */
-      html, body {
-        max-width: 100vw;
-        overflow-x: hidden;
-      }
-      /* Improve nav on mobile */
-      @media (max-width: 768px) {
-        nav {
-          position: sticky !important;
-        }
-      }
-      /* Hamburger Sidebar Mobile Menu - Visibility Control */
-      #mobile-sidebar,
-      #mobile-sidebar-overlay {
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s;
-      }
-      #mobile-sidebar {
-        transform: translateX(100%);
-      }
-      #mobile-sidebar.open,
-      #mobile-sidebar-overlay.open {
-        pointer-events: auto;
-        opacity: 1;
-      }
-      #mobile-sidebar.open {
-        transform: translateX(0);
-      }
-      /* Remove gap below navbar on mobile */
-      nav {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-      }
-      #hero {
-        margin-top: 0 !important;
-        padding-top: 5.5rem !important; /* Height of navbar (adjust if needed) */
-      }
-      @media (max-width: 768px) {
-        #hero {
-          padding-top: 4.5rem !important;
-        }
-      }
-      /* Glassmorphism background for sidebar nav links */
-      #mobile-sidebar .nav-link {
-        background: rgba(40,44,60,0.7);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
-        margin-bottom: 0.5rem;
-        border: 1px solid rgba(255,255,255,0.07);
-      }
-      #mobile-sidebar .nav-link:hover, #mobile-sidebar .nav-link:focus {
-        background: linear-gradient(90deg, rgba(88,101,242,0.18) 0%, rgba(161,143,255,0.18) 100%);
-        color: var(--text-accent) !important;
-        border: 1px solid rgba(88,101,242,0.18);
-      }
-    </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-            },
-            colors: { primary: "#1a1a2e", secondary: "#16213e" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
-    <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-
-
-      
-      :root {
-        --space-dark: #0a0f1c;
-        --space-darker: #000000;
-        --space-accent: #000033;
-        --card-bg: rgba(255, 255, 255, 0.05);
-        --card-bg-darker: rgba(0, 0, 0, 0.2);
-        --text-primary: #ffffff;
-        --text-secondary: #cccccc;
-      }
-      
-      body {
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #000000 0%, #000033 50%, #000066 100%);
-        background-attachment: fixed;
-        background-size: cover;
-        color: var(--text-primary);
-        overflow-x: hidden;
-        min-height: 100vh;
-        position: relative;
-        line-height: 1.6;
-      }
-      
-      section {
-        background: transparent;
-        position: relative;
-        z-index: 1;
-      }
-      
-      section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: inherit;
-        z-index: -1;
-      }
-      
-      section {
-        position: relative;
-        overflow: hidden;
-      }
-      
-      /* Background shapes */
-      .bg-shapes {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        opacity: 0.1;
-        pointer-events: none;
-      }
-      
-      .shape {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(60px);
-        opacity: 0.6;
-        animation: float 25s infinite ease-in-out;
-      }
-      
-      .shape-1 {
-        width: 600px;
-        height: 600px;
-        background: linear-gradient(45deg, #0000ff, #0066ff);
-        top: -300px;
-        right: -200px;
-        animation-delay: 0s;
-      }
-      
-      .shape-2 {
-        width: 800px;
-        height: 800px;
-        background: linear-gradient(45deg, #0000cc, #3366ff);
-        bottom: -400px;
-        left: -300px;
-        animation-delay: 5s;
-      }
-      
-      .shape-3 {
-        width: 400px;
-        height: 400px;
-        background: linear-gradient(45deg, #0000aa, #4d4dff);
-        top: 50%;
-        right: 10%;
-        animation-delay: 10s;
-      }
-      
-      .shape-4 {
-        width: 300px;
-        height: 300px;
-        background: linear-gradient(45deg, #0000ff, #6699ff);
-        bottom: 20%;
-        left: 20%;
-        animation-delay: 15s;
-      }
-      
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(0) rotate(0deg);
-        }
-        25% {
-          transform: translateY(-20px) rotate(5deg);
-        }
-        50% {
-          transform: translateY(0) rotate(0deg);
-        }
-        75% {
-          transform: translateY(20px) rotate(-5deg);
-        }
-      }
-
-
-      
-      /* Hero animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .animate-fade-in-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
-      .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      }
-      .nav-link {
-      position: relative;
-      }
-      .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: white;
-      transition: width 0.3s ease;
-      }
-      .nav-link:hover::after, .nav-link.active::after {
-      width: 100%;
-      }
-      .category-btn {
-      transition: all 0.3s ease;
-      }
-      .category-btn.active {
-      background-color: white;
-      color: #0f0f1a;
-      }
-     
-      .clothing-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .clothing-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      }
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.sharpvision.io/">
+    <meta name="twitter:title" content="SharpVision | Premium Roblox Game Development">
+    <meta name="twitter:description" content="🎮 Discover premium Roblox games by SharpVision! We're more than just a game studio. We're a passionate team dedicated to creating extraordinary experiences on Roblox. Focused on quality, community, and creativity — that's the SharpVision way.">
+    <meta name="twitter:image" content="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <meta name="twitter:site" content="@SharpVision">
+    <meta name="twitter:creator" content="@SharpVision">
     
-      /* FAQ */
-      .faq-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "SharpVision",
+      "description": "Roblox Game Development",
+      "url": "https://www.sharpvision.io",
+      "logo": "https://i.postimg.cc/430z06sx/image-removebg-preview.png",
+      "sameAs": [
+        "https://discord.gg/sharpvision",
+        "https://www.roblox.com/communities/13317009/SharpVision#!/about"
+      ],
+      "foundingDate": "2023",
+      "knowsAbout": ["Roblox Development", "Game Design", "Multiplayer Games"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Roblox Games",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Game",
+              "name": "Fort Martin",
+              "description": "Military training simulation game"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Game",
+              "name": "White House Roleplay",
+              "description": "Political roleplay game"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Game",
+              "name": "Let's Mic",
+              "description": "Performance and social game"
+            }
+          }
+        ]
       }
-      .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      }
-      .faq-item.active .faq-answer {
-      max-height: 500px;
-      }
-      .faq-item.active {
-        background-color: var(--card-bg-darker);
-      }
-      .faq-toggle {
-      transition: transform 0.3s ease;
-      }
-      .faq-item.active .faq-toggle {
-      transform: rotate(180deg);
-      }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    
+    <!-- OG / Facebook / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sharpvision.io/">
+    <meta property="og:title" content="SharpVision | Roblox Game Development">
+    <meta property="og:description" content="🎮 Discover premium Roblox games by SharpVision! We're more than just a game studio. We're a passionate team dedicated to creating extraordinary experiences on Roblox. Focused on quality, community, and creativity — that's the SharpVision way.">
+    <meta property="og:image" content="https://i.postimg.cc/430z06sx/image-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SharpVision - Roblox Gaming Experiences">
+    <meta property="og:site_name" content="SharpVision">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Discord-specific optimizations -->
+    <meta name="theme-color" content="#0099ff">
+    <meta name="color-scheme" content="dark">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SharpVision | Roblox Game Development ">
+
+    
+    <!-- Additional Meta Tags -->
+    <meta name="application-name" content="SharpVision">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="SharpVision">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="HandheldFriendly" content="true">
+    
+    <style>
+        /* Hero Background */
+        .hero-bg {
+            position: flex;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1.5s ease-in-out;
+            opacity: 1;
+        }
+
+        /* Initial background image set via JavaScript */
+        .hero-bg.image1 {
+            background-image: url('https://i.postimg.cc/sD9YNxdM/zanance-T1-1.webp');
+        }
+
+        .hero-bg.image2 {
+            background-image: url('https://i.postimg.cc/yN6vP9D6/Thumb2.webp');
+            opacity: 0;
+        }
+
+      
     </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-all duration-300 border-b border-white/5"
-    >
-      <div class="container mx-auto px-4 py-2">
-        <div class="flex justify-between items-center">
-          <a href="#" class="flex items-center">
-            <img src="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png" alt="Rastria Logo" class="h-10 md:h-12 w-auto">
-            <span class="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-yellow-400 text-yellow-900 align-middle" style="letter-spacing:0.05em;vertical-align:middle;">Beta</span>
-          </a>
-          <div class="hidden md:flex space-x-8">
-            <a
-              href="#hero"
-              class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-              >Home</a
-            >
-            <a
-              href="#about"
-              class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-              >About</a
-            >
-            <a
-              href="#order"
-              class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-              >Order</a
-            >
-            <a
-            href="#partnership"
-            class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-            >Partner</a
-          >
-            <a
-              href="#faq"
-              class="nav-link text-white hover:text-gray-300 transition-colors text-lg"
-              >FAQ</a
-            >
-          </div>
-          <div class="md:hidden">
-            <!-- Hamburger Mobile Menu Button -->
-            <button id="hamburger-btn" aria-label="Open menu" class="text-white p-2 rounded-md hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 block md:hidden">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Mobile Menu -->
-      <!-- Mobile menu removed -->
-      <!-- Hamburger Sidebar Mobile Menu -->
-      <div id="mobile-sidebar-overlay" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"></div>
-      <nav id="mobile-sidebar" class="fixed top-0 right-0 h-full w-72 max-w-full z-50 bg-[rgba(20,24,40,0.98)] shadow-2xl border-l border-white/10 backdrop-blur-2xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col" style="backdrop-filter: blur(24px); background: rgba(20,24,40,0.98);">
-        <div class="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-transparent">
-          <a href="#hero" class="flex items-center gap-2">
-            <img src="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png" alt="Rastria Logo" class="h-9 w-auto">
-            <span class="text-xl font-bold text-white tracking-wide">Rastria</span>
-            
-          </a>
-          <button id="close-sidebar-btn" aria-label="Close menu" class="text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50">
-            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-col gap-2 px-5 py-6">
-          <a href="#hero" class="nav-link text-white text-lg font-semibold py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 focus:bg-gradient-to-r focus:from-blue-600/30 focus:to-purple-600/30 transition-all">Home</a>
-          <a href="#about" class="nav-link text-white text-lg font-semibold py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 focus:bg-gradient-to-r focus:from-blue-600/30 focus:to-purple-600/30 transition-all">About</a>
-          <a href="#order" class="nav-link text-white text-lg font-semibold py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 focus:bg-gradient-to-r focus:from-blue-600/30 focus:to-purple-600/30 transition-all">Order</a>
-          <a href="#partnership" class="nav-link text-white text-lg font-semibold py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 focus:bg-gradient-to-r focus:from-blue-600/30 focus:to-purple-600/30 transition-all">Partner</a>
-          <a href="#faq" class="nav-link text-white text-lg font-semibold py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 focus:bg-gradient-to-r focus:from-blue-600/30 focus:to-purple-600/30 transition-all">FAQ</a>
-        </div>
-      </nav>
-    </nav>
-    <!-- Hero Section -->
-    <section id="hero"
-      class="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-      </div>
-      <div class="absolute inset-0" id="star-field"></div>
-      <div class="container mx-auto px-6 z-10">
-        <div class="text-center max-w-3xl mx-auto">
-          <h1
-            class="text-5xl md:text-7xl font-bold mb-6 opacity-0 transform translate-y-10"
-            id="hero-title"
-          >
-            Welcome to Rastria
-          </h1>
-          <p
-            class="text-x md:text-2xl text-gray-300 mb-10 opacity-0 transform translate-y-10"
-            id="hero-subtitle"
-          >
-          A Discord-based web studio crafting custom websites built around your needs. <br>
-          We deliver high-performance, clean, and user-friendly designs.
-          </p>
-          <a
-            href="#order"
-            class="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-all duration-300 opacity-0 transform translate-y-10 !rounded-button whitespace-nowrap"
-            id="hero-cta"
-            >Get Started</a
-          >
-        </div>
-      </div>
-      <div
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-  
-      </div>
-    </section>
-    <!-- About Us -->
-    <section id="about" class="py-24 relative overflow-hidden">
-      <div class="bg-shapes">
-        <div class="shape shape-1" style="top: 20%; left: -10%;"></div>
-        <div class="shape shape-3" style="bottom: 10%; right: -5%;"></div>
-      </div>
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-white">About Us</h2>
-          <div class="w-24 h-1 bg-white mx-auto"></div>
-        </div>
-        <div
-          class="flex flex-col lg:flex-row items-center justify-between gap-12"
-        >
-          <div class="flex-1 text-center lg:text-left">
-            <h2 class="text-4xl font-bold mb-6">Join Rastria Now!</h2>
-            <p class="text-xl text-gray-400 mb-8">
-                Rastria is a Discord-based studio that creates custom websites tailored to your needs.
-                <br> - <br>
-                From start to finish, we focus on performance, clean design, and user-friendly experiences.
-            </p>
-            <div
-              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <a
-                href="https://discord.gg/gknCbzqUp7"
-                class="inline-flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-3 rounded-button transition-colors duration-300 whitespace-nowrap"
-              >
-                <i class="ri-discord-fill ri-lg"></i>
-                Join Discord
-              </a>
-              <a
-              href="https://www.roblox.com/communities/35949805/U-OPI-Industries#!/about"
-              class="inline-flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-3 rounded-button transition-colors duration-300 whitespace-nowrap"
-            >
-              <i class="ri-information-fill ri-lg"></i>
-              Roblox Group
-            </a>
-            </div>
-          </div>
-          <div class="flex-1 relative">
-            <div
-              class="absolute -inset-4 bg-gradient-to-r from-[#5865F2] to-purple-600 rounded-lg opacity-30 blur-lg"
-            ></div>
-            <div class="relative">
-              <img 
-                src="https://i.postimg.cc/HkKwYdHc/image-removebg-preview-16-1.png" 
-                alt="UTOPIA Industries" 
-                class="w-full h-auto rounded-lg shadow-xl"
-                loading="lazy"
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Organizations Section -->
-    <section id="organizations" class="py-24 relative overflow-hidden">
-      <div class="bg-shapes">
-        <div class="shape shape-1" style="top: 20%; right: -15%;"></div>
-        <div class="shape shape-3" style="bottom: 10%; left: -5%;"></div>
-      </div>
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-white">Rastria's Founder</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-        </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#0099ff", secondary: "#001f3f" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        @keyframes blob {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
         
-        <div class="flex justify-center">
-          <div class="w-full max-w-md">
-            <div class="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 shadow-2xl">
-            <div class="text-center">
-              <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-blue-500/50 p-1">
-                <img src="https://i.postimg.cc/Bn2jyV4D/Your-idea-1.png" 
-                     alt="Profile Picture" 
-                     class="w-full h-full object-cover rounded-full">
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-2">rast0fx</h3>
-              <p class="text-blue-300 font-medium mb-4">Founder & Director</p>
-             
-              <div class="flex justify-center space-x-4">
-                <a href="https://discord.com/users/954061819952132106" 
-                   target="_blank" 
-                   class="w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 rounded-full text-white transition-colors duration-300">
-                  <i class="ri-discord-fill ri-lg"></i>
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Account for fixed navbar */
+        }
+
+        /* Scroll snap for sections */
+        section {
+            scroll-snap-align: start;
+            scroll-margin-top: 80px; /* Account for fixed navbar */
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0099ff;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0077cc;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 153, 255, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: #0077cc;
+            transform: translateY(-3px);
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+        .loader img {
+            animation: pulse 1.5s infinite ease-in-out;
+            max-width: 80%;
+            height: auto;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.postimg.cc/yN6vP9D6/Thumb2.webp');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            z-index: 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 153, 255, 0.1), 0 10px 10px -5px rgba(0, 153, 255, 0.04);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        /* Enhanced Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* New Animation Classes */
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in-left.visible,
+        .fade-in-right.visible,
+        .fade-in-up.visible,
+        .fade-in-scale.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        /* Hover Animations */
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #0099ff, #00ffaa);
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 32px;
+            height: 24px;
+            position: relative;
+            z-index: 100;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hamburger:focus {
+            outline: none;
+        }
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform-origin: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        .hamburger span:nth-child(1) { 
+            top: 0px;
+            transition-delay: 0.15s;
+        }
+        .hamburger span:nth-child(2) { 
+            top: 50%;
+            transform: translateY(-50%);
+            transition-delay: 0.2s;
+        }
+        .hamburger span:nth-child(3) { 
+            bottom: 0px;
+            transition-delay: 0.25s;
+        }
+        .hamburger.active {
+            transform: rotate(180deg);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(10.5px) rotate(45deg);
+            transition-delay: 0.1s;
+        }
+        .hamburger.active span:nth-child(2) { 
+            opacity: 0;
+            transform: translateX(-16px);
+            transition: opacity 0.1s ease, transform 0.2s ease;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-10.5px) rotate(-45deg);
+            transition-delay: 0.1s;
+        }
+        .nav-links {
+            position: fixed;
+            height: 100vh;
+            width: 80%;
+            max-width: 320px;
+            top: 0;
+            right: -100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 90;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
+            padding: 6rem 2rem 2rem;
+            overflow-y: auto;
+        }
+        
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 80;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-links.active {
+            right: 0;
+        }
+        .merch-alert {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 40;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .merch-alert.hero-sticky {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .merch-modal {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .navbar.menu-active .hamburger {
+                position: fixed;
+                right: 1rem;
+                top: 1rem;
+            }
+            .merch-alert.hero-sticky {
+                bottom: 20px;
+                right: 15px;
+                padding: 16px 24px;
+                border-radius: 50px;
+            }
+            .nav-links li {
+                width: 100%;
+                margin: 0.5rem 0;
+                opacity: 0;
+                transform: translateX(20px);
+                transition: all 0.3s ease;
+                transition-delay: calc(0.1s * var(--i));
+            }
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            .nav-links a {
+                display: block;
+                font-size: 1.25rem;
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                transition: all 0.2s ease;
+                width: 100%;
+            }
+            .nav-links a:hover, 
+            .nav-links a:focus {
+                background: rgba(255, 255, 255, 0.05);
+                transform: translateX(4px);
+            }
+        }
+    </style>
+    <style>
+        @keyframes countUp {
+            from {
+                --count: 0;
+            }
+            to {
+                --count: 40652243;
+            }
+        }
+
+        .counter-animation {
+            animation: countUp 2s linear forwards;
+            counter-reset: count var(--count);
+        }
+
+        .counter-animation::after {
+            content: counter(count) '+';
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Loader -->
+    <div class="loader fixed inset-0 flex items-center justify-center bg-gray-900/95 backdrop-blur-sm">
+        <div class="text-center">
+            <img src="https://i.postimg.cc/4y5C7WZf/image-removebg-preview-1.png" alt="SharpVision Logo" class="w-33 h-32 mx-auto mb-4 animate-float">
+            <span class="text-2xl font-bold text-white">SharpVision</span>
+        </div>
+    </div>
+
+    <!-- Merch Modal -->
+    <div id="merchModal" class="fixed inset-0 z-50 hidden merch-modal overflow-y-auto">
+        <div class="flex items-center justify-center min-h-full p-4">
+            <div class="bg-gray-800 rounded-xl p-6 sm:p-8 max-w-md w-full mx-auto my-8 relative">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-center flex-1">🔥 Coming Soon...</h3>
+                    <button onclick="toggleMerchModal()" class="text-gray-400 hover:text-primary ml-4" aria-label="Close">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6 text-center">
+                    <p class="text-gray-300 px-2">Check out our limited edition SharpVision merchandise!</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-700 p-4 rounded-lg flex flex-col items-center">
+                            <div class="h-32 w-full bg-gray-600 rounded-lg mb-3"></div>
+                            <p class="font-medium text-center">TBD</p>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex flex-col items-center">
+                            <div class="h-32 w-full bg-gray-600 rounded-lg mb-3"></div>
+                            <p class="font-medium text-center">TBD</p>
+                        </div>
+                    </div>
+                    <button class="w-full max-w-xs mx-auto bg-primary hover:bg-blue-600 py-3 px-6 rounded-lg font-medium transition-colors duration-200">
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50 bg-transparent  transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="https://i.postimg.cc/4y5C7WZf/image-removebg-preview-1.png" alt="SharpVision Logo" class="h-8">
+                    <span class="text-xl font-bold">SharpVision</span>
                 </a>
-                <a href="https://mkoussa.netlify.app/" 
-                   target="_blank" 
-                   class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-full text-white transition-colors duration-300">
-                  <i class="ri-briefcase-4-line ri-lg"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Add more team members here with the same structure inside the flex container -->
-        
-      </div>
-    </section>
-    <!-- Ordering Section -->
-    <section id="order" class="py-24 relative overflow-hidden">
-      <div class="bg-shapes">
-        <div class="shape shape-2" style="top: 10%; right: -15%;"></div>
-        <div class="shape shape-4" style="bottom: 20%; left: -10%;"></div>
-      </div>
-      <div class="container mx-auto px-6 relative z-10">
-        <h2 class="text-4xl font-bold mb-4 text-center">How To Order From Rastria</h2>
-        <div class="w-24 h-1 bg-white mx-auto mb-16"></div>
-        
-        <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-          <p class="text-xl text-gray-300 mb-8 text-center">
-            Ordering your custom website from <span class="text-white font-semibold">Rastria</span> is simple! We handle all orders through our Discord server to keep things organized and personal.
-          </p>
-          
-          <div class="space-y-12">
-            <!-- Step 1 -->
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <span class="bg-blue-600/20 p-2 rounded-lg mr-3">🧾</span>
-                Step 1: Join Our Discord
-              </h3>
-              <p class="text-gray-300">
-                Join our official <a href="https://discord.gg/gknCbzqUp7" class="text-blue-400 hover:underline" target="_blank">Discord server</a> to get started. All communication, updates, and support are handled there.
-              </p>
-            </div>
-            
-            <!-- Step 2 -->
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <span class="bg-blue-600/20 p-2 rounded-lg mr-3">🎫</span>
-                Step 2: Open a Ticket
-              </h3>
-              <p class="text-gray-300 mb-3">Once you're in the server:</p>
-              <ul class="list-disc list-inside space-y-2 text-gray-300 pl-4">
-                <li>Head to the <code class="bg-gray-800/50 px-2 py-1 rounded">#support</code> channel</li>
-                <li>Choose the <span class="font-medium">"Order"</span> option</li>
-                <li>A private ticket will be created where we'll discuss your project</li>
-              </ul>
-            </div>
-            
-            <!-- Step 3 -->
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <span class="bg-blue-600/20 p-2 rounded-lg mr-3">📋</span>
-                Step 3: Fill Out the Order Form
-              </h3>
-              <p class="text-gray-300 mb-4">Inside your ticket, fill out the website order form:</p>
-              <div class="bg-gray-900/50 p-4 rounded-lg font-mono text-sm text-gray-300 overflow-x-auto mb-4">
-                <div class="whitespace-pre">
-Name: (@username)
-Project Title: (Give your website a short title)
-Type of Website: (Portfolio / Business / E-Commerce / Blog / Other)
-                  
-Description of the Website:
-(What is the site for? What features do you want? Any inspirations?)
-                  
-Preferred Style / Aesthetic:
-(Minimal, dark theme, colorful, modern, etc.)
-                  
-Number of Pages:
-(e.g. Home, About, Contact, Shop...)
-                  
-Responsive Design Needed? (Yes/No):  
-(Should it work on both desktop and mobile?)
-                  
-Deadline (if any):  
-(Include exact date or general timeframe)
-                  
-Budget (Optional):  
-(If you have a price range in mind)
-                  
-Extra Notes / Attachments:
-(Anything else we should know? Logos, references, etc.)</div>
-              </div>
-              <p class="text-gray-300">This helps us understand exactly what you need.</p>
-            </div>
-            
-            <!-- Step 4 -->
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <span class="bg-blue-600/20 p-2 rounded-lg mr-3">🛠️</span>
-                Step 4: We Build, You Review
-              </h3>
-              <p class="text-gray-300">
-                Once we confirm your order, we'll begin building your site. You'll receive updates and previews throughout the process.
-              </p>
-            </div>
-            
-            <!-- Step 5 -->
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
-                <span class="bg-blue-600/20 p-2 rounded-lg mr-3">✅</span>
-                Step 5: Delivery
-              </h3>
-              <p class="text-gray-300">
-                After everything is approved, we'll either deliver your website files or host it for you using <a href="https://www.netlify.com/">Netlify.</a>
-              </p>
-            </div>
-          </div>
-          
-        
-        </div>
-      </div>
-    </section>
-
-    <!-- Partnership Section -->
-    <section id="partnership" class="py-24 relative overflow-hidden">
-      <div class="bg-shapes">
-        <div class="shape shape-1" style="top: 30%; right: -10%;"></div>
-        <div class="shape shape-3" style="bottom: 20%; left: -5%;"></div>
-      </div>
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-white">Partnership Program</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-2xl" style="background-color: var(--card-bg-darker);">
-          <div class="text-center mb-12">
-            <h3 class="text-3xl font-bold text-white mb-4">Rastria Partnership Requirements</h3>
-            <p class="text-gray-300 text-lg">
-              We're always open to forming meaningful and mutually beneficial partnerships with communities, creators, and studios.
-            </p>
-          </div>
-          
-          <div class="space-y-6 mb-12">
-            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h4 class="text-xl font-bold text-white mb-4 flex items-center">
-                <i class="ri-shield-check-line ri-xl mr-3 text-purple-400"></i>
-                Before applying, please ensure your Discord server or organization meets the following criteria:
-              </h4>
-              <ul class="space-y-3 text-gray-300 pl-2">
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>Your community must be <span class="font-semibold text-white">active</span> and <span class="font-semibold text-white">well-managed</span>.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>Your Discord server must have <span class="font-semibold text-white">at least 50 members</span>.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>You must have a <span class="font-semibold text-white">partner section or channel</span> where Rastria can be promoted.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>Content must be <span class="font-semibold text-white">safe</span>, <span class="font-semibold text-white">respectful</span>, and <span class="font-semibold text-white">SFW</span> (no NSFW, hate speech, or harmful activity).</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>A member of your team must be available to <span class="font-semibold text-white">communicate directly</span> with us.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>Your server should have a <span class="font-semibold text-white">clean design</span>, <span class="font-semibold text-white">clear structure</span>, and <span class="font-semibold text-white">basic moderation</span> in place.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-blue-400 mt-1 mr-3"></i>
-                  <span>You must be willing to <span class="font-semibold text-white">promote Rastria</span> in return (via a message, embed, or permanent mention).</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div class="bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded-r">
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <i class="ri-alert-fill text-yellow-400 text-xl"></i>
+                
+                <div class="hidden md:flex items-center space-x-2">
+                    <ul class="flex items-center space-x-6">
+                        <li><a href="#home" class="text-white hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                        <li><a href="#about" class="text-white hover:text-primary transition-colors duration-300 font-medium">About Us</a></li>
+                        <li><a href="#games" class="text-white hover:text-primary transition-colors duration-300 font-medium">Games</a></li>
+                        <li><a href="#contact" class="text-white hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="ml-3">
-                  <p class="text-yellow-100 font-medium">
-                    We reserve the right to deny any partnership that does not align with Rastria's values of professionalism, creativity, and respect.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/30 p-6 rounded-lg border border-blue-500/20">
-            <h4 class="text-2xl font-bold text-white mb-4 flex items-center">
-              <i class="ri-mail-send-line ri-xl mr-3 text-blue-400"></i>
-              Interested in Partnering?
-            </h4>
-            <p class="text-gray-300 mb-6">
-              Submit a request through our ticket system in the <span class="font-medium text-white">#support</span> channel on our Discord server.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="https://discord.gg/gknCbzqUp7" 
-                target="_blank" 
-                class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300"
-              >
-                <i class="ri-discord-fill ri-lg mr-2"></i>
-                Join Our Discord
-              </a>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Enhanced Feedback Form Section -->
-    <section id="feedback" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
-      <!-- Decorative elements -->
-      <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div class="absolute top-20 -left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob"></div>
-        <div class="absolute top-0 -right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob animation-delay-4000"></div>
-      </div>
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Share Your Thoughts</h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Your feedback helps us improve and create a better experience for everyone.</p>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mt-6"></div>
-        </div>
-
-        <div class="max-w-2xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/50">
-         
-          <div class="p-8">
-            <form action="https://formspree.io/f/mldldpqr" method="POST" id="feedbackForm" class="space-y-6">
-              <input type="hidden" id="type" name="type" value="feedback">
-              <!-- Name Field -->
-              <div class="group relative">
-                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-all duration-300 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400">
-                  Your Name <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <input type="text" id="name" name="name" required
-                    class="pl-10 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-300"
-                    placeholder="Discord User">
-                </div>
-              </div>
-
-              <!-- Email Field -->
-              <div class="group relative">
-                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-all duration-300 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400">
-                  Email Address <span class="text-gray-400 text-xs">(optional)</span>
-                </label>
-                <div class="relative">
-                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <input type="email" id="email" name="email"
-                    class="pl-10 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-300"
-                    placeholder="your@email.com">
-                </div>
-              </div>
-
-              <!-- Subject Field -->
-              <div class="group relative">
-                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-all duration-300 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400">
-                  Subject <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                  </div>
-                  <input type="text" id="subject" name="subject" required
-                    class="pl-10 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-300"
-                    placeholder="What's this about?">
-                </div>
-              </div>
-
-              <!-- Priority (Conditional) -->
-              <div id="priority-container" class="hidden">
-                <label for="priority" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Priority <span class="text-red-500">*</span></label>
-                <select id="priority" name="priority"
-                  class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 py-2 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors">
-                  <option value="low">Low</option>
-                  <option value="medium" selected>Medium</option>
-                  <option value="high">High</option>
-                </select>
-              </div>
-
-           
-
-              <!-- Message Field -->
-              <div class="group relative">
-                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-all duration-300 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400">
-                  Your Message <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                  <div class="absolute top-3 left-3">
-                    <svg class="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                    </svg>
-                  </div>
-                  <textarea id="message" name="message" rows="5" required
-                    class="pl-10 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-300 resize-none"
-                    placeholder="Please provide detailed information about your feedback or bug report. The more details you provide, the better we can assist you."></textarea>
-                  <div class="mt-1 flex justify-end">
-                    <span id="char-count" class="text-xs text-gray-500 dark:text-gray-400">0/1000</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Additional Fields (Only for Bug Reports) -->
-              <div id="bug-fields" class="space-y-6 hidden">
-                <!-- Device & Browser Info -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="group relative">
-                    <label for="device" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Device Type <span class="text-gray-400 text-xs">(optional)</span>
-                    </label>
-                    <select id="device" name="device"
-                      class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-2 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white transition-colors">
-                      <option value="">Select device...</option>
-                      <option value="desktop">Desktop</option>
-                      <option value="laptop">Laptop</option>
-                      <option value="tablet">Tablet</option>
-                      <option value="mobile">Mobile Phone</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div class="group relative">
-                    <label for="browser" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Browser <span class="text-gray-400 text-xs">(optional)</span>
-                    </label>
-                    <input type="text" id="browser" name="browser"
-                      class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-2 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors"
-                      placeholder="e.g., Chrome, Firefox, Safari">
-                  </div>
+                
+                <!-- Mobile Menu -->
+                <div class="nav-overlay" id="navOverlay" onclick="toggleMobileMenu()"></div>
+                <div class="nav-links md:hidden" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+                    <h2 id="mobileMenuTitle" class="sr-only">Mobile Navigation Menu</h2>
+                    <ul class="flex flex-col items-center space-y-4 py-6">
+                        <li><a href="#home" class="text-2xl font-medium hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-2xl font-medium hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#games" class="text-2xl font-medium hover:text-primary transition-colors">Games</a></li>
+                        <li><a href="#contact" class="text-2xl font-medium hover:text-primary transition-colors">Contact</a></li>
+                        <li class="w-full mt-4">
+                            <button class="w-full merch-modal-trigger bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2 text-base">
+                                <i class="ri-fire-fill"></i>
+                                <span>New Merch Drop!</span>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Steps to Reproduce -->
-                <div class="group relative">
-                  <label for="steps" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Steps to Reproduce <span class="text-gray-400 text-xs">(for bugs)</span>
-                  </label>
-                  <textarea id="steps" name="steps" rows="3"
-                    class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 py-2 px-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors resize-none"
-                    placeholder="1. Go to...
-2. Click on...
-3. Scroll to...
-4. See error..."></textarea>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <div class="pt-2">
-                <button type="submit"
-                  class="group w-full flex justify-center items-center py-3.5 px-6 border border-transparent rounded-xl shadow-sm text-base font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
-                  <span class="flex items-center">
-                    <svg class="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                    </svg>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">
-                      Send Feedback
-                    </span>
-                  </span>
+                <button class="hamburger md:hidden" id="hamburger" onclick="toggleMobileMenu()" aria-expanded="false" aria-label="Toggle navigation menu" aria-controls="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
-                <p class="mt-3 text-center text-xs text-gray-500 dark:text-gray-400">
-                  We'll respond to your message as soon as possible. Usually within 24-48 hours.
-                </p>
-              </div>
-            </form>
+            </div>
+        </div>
+    </nav>
 
-            <!-- Success Message -->
-            <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900/50 border border-green-200 dark:border-green-800 rounded-md">
-              <div class="flex">
-                <svg class="h-5 w-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div class="ml-3">
-                  <p class="text-sm font-medium text-green-800 dark:text-green-200">Thank you for your feedback!</p>
-                  <p class="text-sm text-green-700 dark:text-green-300 mt-1">We've received your message and will get back to you soon.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center relative">
+        <div class="hero-bg image1"></div>
+        <div class="hero-bg image2"></div>
+        <button class="merch-alert merch-modal-trigger hero-sticky hidden md:flex" aria-label="View new merchandise">
+            <i class="ri-fire-fill"></i>
+            <span>New Merch Drop!</span>
+        </button>
+        
+        <div class="container mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-12 relative z-10 w-full">
+            <div class="max-w-4xl mx-auto">
+                <!-- Text Content -->
+                <div class="text-center mb-8 sm:mb-12 px-2">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight">
+                        <div class="space-y-0 sm:space-y-1">
+                            <div class="leading-tight">Crafting <span class="text-primary">Enjoyable</span></div>
+                            <div class="leading-tight">Experiences on</div>
+                            <div class="text-primary leading-tight">Roblox</div>
+                        </div>
+                        <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-6 sm:mt-8">
+                            SharpVision is a small indie game studio with a big passion for making fun and memorable experiences on Roblox.
+                        </p> 
+                    </h1>
+                    
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10 mb-8 sm:mb-12 px-2">
+                        <a href="#games" class="bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 flex items-center justify-center">
+                            Get Started
+                        </a>
+                        <a href="#about" class="bg-transparent border-2 border-white hover:border-primary hover:text-primary text-white font-medium py-3 px-6 sm:px-8 rounded-lg transition-all duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                    
+                
+                    <!-- Compact Stats Row -->
+                    <div class="w-full max-w-sm mx-auto mt-8 sm:mt-10">
+                        <div class="grid grid-cols-3 gap-3 px-2">
+                            <!-- Visits Counter -->
+                            <div class="group bg-gray-800/80 rounded-lg p-2 border border-gray-700/50 transition-colors duration-200 hover:border-primary/30">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-indigo-500/90 to-purple-500/90 rounded-md mb-1">
+                                        <img src="https://i.postimg.cc/C100Tqxz/image.png" alt="Visits" class="h-4 w-4">
+                                    </div>
+                                    <div class="text-base font-bold text-white" id="visitsCounter">0</div>
+                                    <div class="text-xs text-gray-300/90">Visits</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Community Counter -->
+                            <div class="group bg-gray-800/80 rounded-lg p-2 border border-gray-700/50 transition-colors duration-200 hover:border-primary/30">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-indigo-500/90 to-purple-500/90 rounded-md mb-1">
+                                        <img src="https://i.postimg.cc/LX2c0FxP/Members-Icon.webp" alt="Community" class="h-4 w-4">
+                                    </div>
+                                    <div class="text-base font-bold text-white" id="communityCounter">2M+</div>
+                                    <div class="text-xs text-gray-300/90">Community</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Player Count -->
+                            <div class="group bg-gray-800/80 rounded-lg p-2 border border-gray-700/50 transition-colors duration-200 hover:border-primary/30">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-indigo-500/90 to-purple-500/90 rounded-md mb-1">
+                                        <img src="https://i.postimg.cc/CMsTvFQ5/joystick.webp" alt="Players" class="h-4 w-4">
+                                    </div>
+                                    <div class="text-base font-bold text-white" id="playerCounter">150+</div>
+                                    <div class="text-xs text-gray-300/90">Players</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-24 bg-gray-900 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center mb-16 fade-in">
+               
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-400">SharpVision</span></h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                    We're more than just a game studio. We're a passionate team dedicated to creating extraordinary experiences on Roblox.
+                </p> <br>
+                
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                    Focused on quality, community, and creativity — that's the SharpVision way.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Quality Pillar -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:bg-primary/20 transition-colors duration-300">
+                        <i class="ri-star-s-fill text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Quality First</h3>
+                    <p class="text-gray-400">
+                        Every game we create is a labor of love, polished to perfection with attention to detail that ensures smooth, enjoyable gameplay experiences.
+                    </p>
+                </div>
+
+                <!-- Community Pillar -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:bg-indigo-500/20 transition-colors duration-300">
+                        <i class="ri-community-fill text-3xl text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community Driven</h3>
+                    <p class="text-gray-400">
+                        Our players inspire us. We listen, engage, and grow with our community to create games that bring people together and create lasting memories.
+                    </p>
+                </div>
+
+                <!-- Creativity Pillar -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:bg-purple-500/20 transition-colors duration-300">
+                        <i class="ri-lightbulb-flash-fill text-3xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Boundless Creativity</h3>
+                    <p class="text-gray-400">
+                        We push the limits of what's possible on Roblox, constantly innovating and exploring new ideas to deliver fresh, engaging experiences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Community CTA -->
+            <div class="mt-20 text-center fade-in">
+                <h3 class="text-2xl font-bold mb-6">Join Our Growing Community</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                    Connect with fellow players, get exclusive updates, and be the first to know about our latest projects and events.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://discord.gg/sharpvision" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 inline-flex items-center">
+                        <i class="ri-discord-fill mr-2"></i> Discord Server
+                    </a>
+                    <a href="https://www.roblox.com/communities/13317009/SharpVision#!/about" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white/5 text-white font-medium rounded-full hover:bg-white/10 transition-all duration-300 inline-flex items-center">
+                        <i class="ri-roblox-fill mr-2"></i> Roblox Group
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="py-20 relative overflow-hidden">
+        <!-- 3D Gradient Background -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/95 to-gray-900"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.2),rgba(0,0,0,0))]"></div>
+            <div class="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <!-- Animated gradient elements -->
+            <div class="absolute -top-1/2 left-1/4 w-full max-w-2xl h-[500px] bg-gradient-to-r from-indigo-500/20 to-pink-500/20 rounded-full mix-blend-soft-light blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-1/4 right-1/4 w-full max-w-2xl h-[500px] bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full mix-blend-soft-light blur-3xl animate-blob animation-delay-4000"></div>
+            <div class="absolute top-1/2 left-1/2 w-full max-w-3xl h-[600px] bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full mix-blend-soft-light blur-3xl animate-blob"></div>
+        </div>
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Games</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Explore our portfolio of immersive Roblox experiences designed for
+              players of all ages. Each game is crafted with attention to detail
+              and player enjoyment.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden fade-in">
+              <div class="h-48 bg-gray-700 relative">
+                <div
+                  class="absolute inset-0"
+                  style="background-image: url('https://i.postimg.cc/ZKNydggZ/image.png'); background-position: 30% center; background-size: cover;"
+                ></div>
+                <div
+                  class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded"
+                >
+                  POPULAR
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Fort Martin</h3>
+                <p class="text-gray-400 mb-4">
+                    🌟  Welcome to Fort Martin – the heart of Basic Combat Training for the United States Army. This base is your gateway to the many facets of Army life. 
+                </p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-700 min-h-[40px]">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-eye-line mr-1"></i>
+                      <span id="fm-visits">...</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-gamepad-line mr-1"></i>
+                      <span id="fm-playing">...</span>
+                    </div>
+                  </div>
+                  <a href="https://www.roblox.com/games/653205701/Fort-Martin" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap">
+                    Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden fade-in">
+              <div class="h-48 bg-gray-700 relative">
+                <div
+                  class="absolute inset-0"
+                  style="background-image: url('https://i.postimg.cc/kGBKzgft/image.png'); background-size: cover; background-position: center;"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">🏛️ White House Roleplay</h3>
+                <p class="text-gray-400 mb-4">
+                    👮‍♂️ Live Your Role: Choose to be a Citizen, Criminal, Police Officer, or even the President in our dynamic city. Enforce the law, run criminal enterprises, or lead the nation!
+                </p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-700 min-h-[40px]">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-eye-line mr-1"></i>
+                      <span id="wh-visits">...</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-gamepad-line mr-1"></i>
+                      <span id="wh-playing">...</span>
+                    </div>
+                  </div>
+                  <a href="https://www.roblox.com/games/4838322068/White-House-Roleplay" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap">
+                    Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="game-card bg-gray-800 rounded-lg overflow-hidden fade-in">
+              <div class="h-48 bg-gray-700 relative">
+                <div
+                  class="absolute inset-0"
+                  style="background-image: url('https://i.postimg.cc/mgyrDfp4/image.webp'); background-size: cover; background-position: center;"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded"
+                >
+                  NEW
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">🎙️ Let's Mic!</h3>
+                <p class="text-gray-400 mb-4">
+                    Let's Mic is a chill hangout game on Roblox where you can grab the mic, perform, and just vibe with your friends.
+                    <br>
+                <br>
+                
+                </p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-700 min-h-[40px]">
+                  <div class="flex flex-col gap-1">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-eye-line mr-1"></i>
+                      <span id="lm-visits">...</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-gamepad-line mr-1"></i>
+                      <span id="lm-playing">...</span>
+                    </div>
+                  </div>
+                  <a href="https://www.roblox.com/games/79878571304797/BETA-RELEASE-Lets-Mic" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap">
+                    Play Now
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 relative overflow-hidden">
-      <div class="bg-shapes">
-        <div class="shape shape-2" style="top: -10%; left: -15%;"></div>
-        <div class="shape shape-4" style="bottom: 10%; right: -10%;"></div>
-      </div>
-        <!-- Star Background -->
-        <div class="absolute inset-0" id="faq-stars"></div>
-        <div class="container mx-auto px-6 relative z-10">
-          <h2 class="text-4xl font-bold mb-4 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
-          <div class="max-w-3xl mx-auto">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                  TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
+        <!-- Upcoming Games Section -->
+        <div class="mt-20 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Upcoming Games</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+              Get excited for these new experiences coming soon to SharpVision. Be the first to play!
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+              <div class="game-card bg-gray-800 rounded-lg overflow-hidden border border-primary/20 hover:border-primary/50 transition-all">
+                <div class="h-48 bg-gray-700 relative">
+                  <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-gray-800 flex items-center justify-center">
+                    <i class="ri-gamepad-line text-6xl text-primary/50"></i>
+                  </div>
+                  <div class="absolute top-3 left-3 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    COMING SOON
+                  </div>
+                </div>
+                <div class="p-4 sm:p-5">
+                  <h3 class="text-lg font-bold mb-1.5">TBD</h3>
+                  <p class="text-sm text-gray-400 mb-3">
+                    TBD
+                  </p>
+                  <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-700 min-h-[40px]">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-calendar-line mr-1"></i>
+                      <span>TBD</span>
+                    </div>
+                   
+                  </div>
                 </div>
               </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
-              </div>
-            </div>
-            <!-- FAQ Item 2 -->
-            <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                  TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
+              
+              <div class="game-card bg-gray-800 rounded-lg overflow-hidden border border-primary/20 hover:border-primary/50 transition-all">
+                <div class="h-48 bg-gray-700 relative">
+                  <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-gray-800 flex items-center justify-center">
+                    <i class="ri-sword-line text-6xl text-purple-500/50"></i>
+                  </div>
+                  <div class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    IN DEVELOPMENT
+                  </div>
+                </div>
+                <div class="p-4 sm:p-5">
+                  <h3 class="text-lg font-bold mb-1.5">TBD</h3>
+                  <p class="text-sm text-gray-400 mb-3">
+                    TBD
+                  </p>
+                  <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-700 min-h-[40px]">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-calendar-line mr-1"></i>
+                      <span>TBD</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
-              </div>
-            </div>
-            <!-- FAQ Item 3 -->
-            <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                  TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
+              
+              <div class="game-card bg-gray-800 rounded-lg overflow-hidden border border-primary/20 hover:border-primary/50 transition-all">
+                <div class="h-48 bg-gray-700 relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-gray-800 flex items-center justify-center">
+                    <i class="ri-building-line text-6xl text-green-500/50"></i>
+                  </div>
+                  <div class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    EARLY CONCEPT
+                  </div>
                 </div>
-              </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
-              </div>
-            </div>
-            <!-- FAQ Item 4 -->
-            <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                  TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
+                <div class="p-4 sm:p-5">
+                  <h3 class="text-lg font-bold mb-1.5">TBD</h3>
+                  <p class="text-sm text-gray-400 mb-3">
+                    TBD
+                  </p>
+                  <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-700 min-h-[40px]">
+                    <div class="flex items-center text-sm text-gray-400 whitespace-nowrap">
+                      <i class="ri-calendar-line mr-1"></i>
+                      <span>TBD</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
-              </div>
-            </div>
-             <!-- FAQ Item 5 -->
-             <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
-                </div>
-              </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
-              </div>
-            </div>
-            <!-- FAQ Item 6 -->
-            <div class="faq-item py-6">
-              <div class="flex justify-between items-center cursor-pointer">
-                <h3 class="text-xl font-semibold">
-                  TBD
-                </h3>
-                <div class="w-8 h-8 flex items-center justify-center faq-toggle">
-                  <i class="ri-arrow-down-s-line ri-xl text-white"></i>
-                </div>
-              </div>
-              <div class="faq-answer pt-4">
-                <p class="text-gray-400">
-                  TBD
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-    <!-- Footer -->
-    <footer id="footer" class="py-12 relative overflow-hidden">
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 md:gap-0">
-          <!-- Brand & Copyright -->
-          <div class="mb-8 md:mb-0 flex-1 min-w-[200px]">
-            <a href="#hero" class="text-2xl font-bold text-white flex items-center gap-2 mb-2">
-              <img src="https://i.postimg.cc/rF4XK4tS/cropped-image-removebg-preview-16-1-removebg-preview.png" alt="Rastria Logo" class="h-8 w-8 inline-block align-middle">
-              Rastria
-              <span class="ml-2 px-2 py-0.5 rounded-full text-xs font-semibold bg-yellow-400 text-yellow-900 align-middle" style="letter-spacing:0.05em;vertical-align:middle;">Beta</span>
-            </a>
-            <p class="text-gray-400 mt-2">©2025. All Rights Reserved</p>
-            <div class="flex space-x-6 mt-4">
-              <button onclick="openModal('privacy-modal')" class="text-blue-400 hover:underline text-sm">Privacy Policy</button>
-              <button onclick="openModal('terms-modal')" class="text-blue-400 hover:underline text-sm">Terms of Service</button>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+                    <p class="text-gray-400 mb-8">
+                        Have questions about our games or interested in collaborating?
+                        Reach out to us using the contact form or through our social media
+                        channels.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg mr-4">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Email</h3>
+                                <p class="text-gray-400">sharpvisionofficial@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg mr-4">
+                                <i class="ri-discord-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Discord</h3>
+                                <p class="text-gray-400">discord.gg/sharpvision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-gray-800 rounded-lg p-6 sm:p-8">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-4" method="POST" action="#" autocomplete="on">
+        <!-- CSRF Token (you'll need server-side validation for this) -->
+        <input type="hidden" name="csrf_token" id="csrf_token" value="">
+        <script>
+            // Generate a simple CSRF token (for demo purposes)
+            // In production, use a proper server-side token
+            document.addEventListener('DOMContentLoaded', function() {
+                const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                document.getElementById('csrf_token').value = token;
+            });
+        </script>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full bg-gray-700 border-none rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your name" required minlength="2" aria-required="true">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full bg-gray-700 border-none rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your email" required aria-required="true">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full bg-gray-700 border-none rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:outline-none resize-none" placeholder="Your message" required minlength="10" aria-required="true"></textarea>
+                            </div>
+                            <div class="form-errors text-red-400 text-sm mb-4 hidden"></div>
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" aria-live="polite">
+                                <span class="submit-text">Send Message</span>
+                                <span class="loading hidden">Sending...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- Quick Links -->
-          <div class="flex-1 min-w-[180px] mb-8 md:mb-0">
-            <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="#hero" class="hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
-              <li><a href="#order" class="hover:text-blue-400 transition-colors">Order</a></li>
-              <li><a href="#partnership" class="hover:text-blue-400 transition-colors">Partner</a></li>
-              <li><a href="#faq" class="hover:text-blue-400 transition-colors">FAQ</a></li>
-            </ul>
-          </div>
-          <!-- Contact Info -->
-          <div class="flex-1 min-w-[220px] mb-8 md:mb-0">
-            <h4 class="text-lg font-semibold text-white mb-3">Contact</h4>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="mailto:rastria.web@gmail.com" class="hover:text-blue-400 transition-colors flex items-center"><i class="ri-mail-line mr-2"></i> rastosiafox@gmail.com</a></li>
-              <li><a href="https://discord.gg/gknCbzqUp7" target="_blank" class="hover:text-blue-400 transition-colors flex items-center"><i class="ri-discord-fill mr-2"></i> Discord Server</a></li>
-            </ul>
-          </div>
-          <!-- Socials & Back to Top -->
-          <div class="flex-1 min-w-[180px] flex flex-col items-center md:items-end">
-            
-            <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow hover:from-purple-600 hover:to-blue-600 transition-all">
-              <i class="ri-arrow-up-line"></i> Back to Top
-            </button>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-800 to-gray-900 pt-16 pb-20 md:pb-10 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary rounded-full mix-blend-soft-light blur-3xl"></div>
+            <div class="absolute bottom-1/4 -left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-soft-light blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <!-- Main Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center space-x-1 mb-2">
+                        <img src="https://i.postimg.cc/4y5C7WZf/image-removebg-preview-1.png" alt="SharpVision Logo" class="h-10 w-auto">
+                        <span class="text-2xl font-bold text-white">SharpVision</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Creating immersive gaming experiences that bring players together from around the world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#https://x.com/SharpVGames" class="text-gray-500 hover:text-blue-400 transition-all duration-300 transform hover:-translate-y-1 text-xl" aria-label="Twitter">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="https://discord.gg/sharpvision" class="text-gray-500 hover:text-indigo-400 transition-all duration-300 transform hover:-translate-y-1 text-xl" aria-label="Discord">
+                            <i class="ri-discord-line"></i>
+                        </a>
+                        <a href="#https://youtube.com/@sharpvisiongames?si=RqHqmf2my8o3xRix" class="text-gray-500 hover:text-red-500 transition-all duration-300 transform hover:-translate-y-1 text-xl" aria-label="YouTube">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        &copy; 2025 SharpVision. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm" id="privacyPolicyLink">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm" id="termsOfServiceLink">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacy-modal" class="fixed inset-0 bg-black/75 z-50 hidden flex items-center justify-center p-4">
-      <div class="bg-[#0a0f1c] rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-white">Privacy Policy</h3>
-            <button onclick="closeModal('privacy-modal')" class="text-gray-400 hover:text-white">
-              <i class="ri-close-line text-2xl"></i>
-            </button>
-          </div>
-          <div class="prose prose-invert max-w-none">
-            <h4 class="text-lg font-semibold text-white mt-4">1. Information We Collect</h4>
-            <p class="text-gray-300">We collect information you provide directly to us, such as when you create an account, make a purchase, or contact us. This may include your name, email address, payment information, and any other information you choose to provide.</p>
+    <script>
+ document.addEventListener("DOMContentLoaded", function () {
+    // Loader
+    const loader = document.querySelector(".loader");
+    setTimeout(() => {
+        loader.classList.add("hidden");
+        loader.style.display = "none";
+        
+        // Start the counter animations after loader is hidden
+        fetchRobloxStats();
+        // Update stats every hour
+        setInterval(fetchRobloxStats, 3600000);
+        
+        // Initial counters (will be updated by API)
+        // Format numbers with M+ for millions
+        const formatNumber = (num) => {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(0) + 'M+';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'K+';
+            }
+            return num.toString();
+        };
+
+        // Update counter display with formatted numbers
+        document.getElementById('visitsCounter').textContent = '0+';
+
+        // Original animation calls (kept for reference but won't be used with formatted numbers)
+        // animateCounter('visitsCounter', 40000000, 1000);
+        // animateCounter('communityCounter', 2000000, 1000);
+        // animateCounter('playerCounter', 150, 1000);
+    }, 1500);
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('navOverlay');
+        const hamburger = document.getElementById('hamburger');
+        const isOpening = !menu.classList.contains('active');
+        
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = isOpening ? 'hidden' : '';
+        
+        // Toggle aria attributes
+        hamburger.setAttribute('aria-expanded', isOpening);
+        menu.setAttribute('aria-hidden', !isOpening);
+        
+        // Animate menu items
+        if (isOpening) {
+            const menuItems = menu.querySelectorAll('li');
+            menuItems.forEach((item, index) => {
+                item.style.setProperty('--i', index);
+            });
+        }
+    }
+
+    // Initialize mobile menu state
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    
+    // Mobile menu functionality
+    window.toggleMobileMenu = function() {
+        toggleMobileMenu();
+    };
+
+    // Improved scroll handling for all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             
-            <h4 class="text-lg font-semibold text-white mt-6">2. How We Use Your Information</h4>
-            <p class="text-gray-300">We use the information we collect to:</p>
-            <ul class="list-disc pl-6 text-gray-300 mt-2">
-              <li>Provide, maintain, and improve our services</li>
-              <li>Process transactions and send related information</li>
-              <li>Respond to your comments and questions</li>
-              <li>Send you technical notices and support messages</li>
-              <li>Monitor and analyze trends and usage</li>
-            </ul>
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            // If mobile menu is open, close it
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbarHeight = navbar.offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
 
-            <h4 class="text-lg font-semibold text-white mt-6">3. Information Sharing</h4>
-            <p class="text-gray-300">We do not share your personal information with third parties except as described in this policy. We may share information with:</p>
-            <ul class="list-disc pl-6 text-gray-300 mt-2">
-              <li>Service providers who perform services on our behalf</li>
-              <li>Law enforcement or other government officials, in response to a verified request</li>
-              <li>Other parties in connection with a company transaction</li>
-            </ul>
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
 
-            <h4 class="text-lg font-semibold text-white mt-6">4. Security</h4>
-            <p class="text-gray-300">We take reasonable measures to help protect your personal information from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+                // Ensure body scroll is enabled
+                document.body.style.overflow = '';
+                
+                // Update URL without scrolling
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
 
-            <h4 class="text-lg font-semibold text-white mt-6">5. Your Choices</h4>
-            <p class="text-gray-300">You may update or correct your account information at any time by logging in to your account. You may also contact us to request access to, correct, or delete any personal information.</p>
+    // Handle initial hash in URL
+    if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            setTimeout(() => {
+                const navbarHeight = navbar.offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                // Ensure body scroll is enabled
+                document.body.style.overflow = '';
+            }, 100);
+        }
+    }
 
-            <h4 class="text-lg font-semibold text-white mt-6">6. Changes to This Policy</h4>
-            <p class="text-gray-300">We may update this privacy policy from time to time. If we make material changes, we will notify you by email or by posting a notice on our website.</p>
+    // Navbar Scroll Effect
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-gray-900', 'shadow-lg');
+            navbar.classList.remove('bg-transparent');
+        } else {
+            navbar.classList.remove('bg-gray-900', 'shadow-lg');
+            navbar.classList.add('bg-transparent');
+        }
+    }
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
-            <p class="text-gray-400 text-sm mt-8">Last updated: July 11, 2025</p>
-          </div>
+    // Fade-in Animation
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < window.innerHeight - 150) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', fadeInOnScroll);
+    fadeInOnScroll();
+    
+    // Scroll to top button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.className = 'scroll-to-top';
+    scrollToTopBtn.innerHTML = '↑';
+    scrollToTopBtn.title = 'Scroll to top';
+    document.body.appendChild(scrollToTopBtn);
+
+    // Show/hide scroll to top button
+    function toggleScrollToTop() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    }
+
+    // Scroll to top functionality
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        // Ensure body scroll is enabled
+        document.body.style.overflow = '';
+    });
+
+    // Initial check for scroll position
+    toggleScrollToTop();
+    
+    // Update scroll position on scroll
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            toggleScrollToTop();
+        }, 66);
+    }, false);
+
+    // Form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const errorContainer = this.querySelector('.form-errors');
+            errorContainer.classList.add('hidden');
+            errorContainer.textContent = '';
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const submitText = submitBtn.querySelector('.submit-text');
+            const loadingText = submitBtn.querySelector('.loading');
+            submitText.classList.add('hidden');
+            loadingText.classList.remove('hidden');
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    this.reset();
+                    errorContainer.textContent = 'Thank you for your message! We will get back to you soon.';
+                    errorContainer.classList.remove('hidden', 'text-red-400');
+                    errorContainer.classList.add('text-green-400');
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    const errorMessage = data.errors ? 
+                        Object.values(data.errors).join(' ') : 
+                        'Failed to send message. Please try again later.';
+                    throw new Error(errorMessage);
+                }
+            } catch (error) {
+                errorContainer.textContent = error.message || 'Failed to send message. Please try again later.';
+                errorContainer.classList.remove('hidden', 'text-green-400');
+                errorContainer.classList.add('text-red-400');
+            } finally {
+                submitText.classList.remove('hidden');
+                loadingText.classList.add('hidden');
+                submitBtn.disabled = false;
+            }
+        });
+    }
+    
+    // Merch Modal
+    const modal = document.getElementById('merchModal');
+    
+    // Merch Modal Toggle Function
+    window.toggleMerchModal = function() {
+        const isHidden = modal.classList.contains('hidden');
+        modal.classList.toggle('hidden');
+        document.body.style.overflow = isHidden ? 'hidden' : '';
+        modal.setAttribute('aria-hidden', !isHidden);
+    }
+    
+    // Add event listeners for all merch buttons
+    document.querySelectorAll('.merch-modal-trigger, .merch-alert').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+            toggleMerchModal();
+        });
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (!modal.classList.contains('hidden')) {
+                toggleMerchModal();
+            }
+            if (mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+        // Close mobile menu when clicking outside
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            if (mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+        
+        // Close modal when clicking outside
+        if (modal && !modal.classList.contains('hidden')) {
+            const modalContent = modal.querySelector('.max-w-md');
+            if (!modalContent.contains(e.target) && !e.target.closest('.merch-modal-trigger')) {
+                toggleMerchModal();
+            }
+        }
+    });
+
+    // Function to format numbers with K/M/B suffixes
+    function formatNumber(num) {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M+';
+        } else if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'K+';
+        }
+        return num.toString() + '+';
+    }
+
+    // Function to fetch and update community member count
+    async function updateCommunityCounter() {
+        const groupIds = [
+            '3108077', // United States Army
+            '5856978', // United States Secret Service
+            '13317009' // SharpVision
+        ];
+        let totalMembers = 0;
+
+        for (const groupId of groupIds) {
+            try {
+                const url = `https://corsproxy.io/?${encodeURIComponent(`https://groups.roblox.com/v1/groups/${groupId}`)}`;
+                const response = await fetch(url, {
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) {
+                    console.error(`Failed to fetch group ${groupId}:`, response.status);
+                    continue;
+                }
+                const data = await response.json();
+                totalMembers += data.memberCount || 0;
+                console.log(`Group ${groupId} members:`, data.memberCount);
+            } catch (error) {
+                console.error(`Error fetching group ${groupId}:`, error);
+            }
+        }
+
+        const communityElement = document.getElementById('communityCounter');
+        if (communityElement) {
+            communityElement.textContent = formatNumber(totalMembers);
+        } else {
+            console.error('Community counter element not found');
+        }
+    }
+
+    // Function to fetch Roblox game statistics
+    async function fetchRobloxStats() {
+        try {
+            // Show loading state immediately
+            const visitsElement = document.getElementById('visitsCounter');
+            const playerElement = document.getElementById('playerCounter');
+            if (visitsElement) visitsElement.textContent = 'Loading...';
+            if (playerElement) playerElement.textContent = 'Loading...';
+
+            // Game IDs and card element IDs
+            const games = [
+                { id: '1641678457', name: 'White House Roleplay', visitsId: 'wh-visits', playingId: 'wh-playing' },
+                { id: '273862097', name: 'Fort Martin', visitsId: 'fm-visits', playingId: 'fm-playing' },
+                { id: '6904157397', name: 'Lets Mic', visitsId: 'lm-visits', playingId: 'lm-playing' }
+            ];
+            
+            let totalVisits = 0;
+            let totalPlayers = 0;
+            
+            // Fetch data for each game
+            for (const game of games) {
+                try {
+                    // Show loading state for each game
+                    if (game.visitsId) {
+                        const visitsElement = document.getElementById(game.visitsId);
+                        if (visitsElement) visitsElement.textContent = 'Loading...';
+                    }
+                    if (game.playingId) {
+                        const playingElement = document.getElementById(game.playingId);
+                        if (playingElement) playingElement.textContent = 'Loading...';
+                    }
+
+                    // Use the exact same approach as the community counter
+                    const url = `https://corsproxy.io/?${encodeURIComponent(`https://games.roblox.com/v1/games?universeIds=${game.id}`)}`;
+                    
+                    const response = await fetch(url, {
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data.data && data.data[0]) {
+                        const visits = data.data[0].visits || 0;
+                        const playing = data.data[0].playing || 0;
+                        totalVisits += visits;
+                        totalPlayers += playing;
+                        
+                        // Update the game card stats
+                        if (game.visitsId) {
+                            const visitsElement = document.getElementById(game.visitsId);
+                            if (visitsElement) {
+                                visitsElement.textContent = formatNumber(visits) + " Visits";
+                            }
+                        }
+                        if (game.playingId) {
+                            const playingElement = document.getElementById(game.playingId);
+                            if (playingElement) {
+                                playingElement.textContent = playing + ' Playing';
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error fetching data for ${game.name}:`, error);
+                    // Show error state
+                    if (game.visitsId) {
+                        const visitsElement = document.getElementById(game.visitsId);
+                        if (visitsElement) visitsElement.textContent = 'Error';
+                    }
+                    if (game.playingId) {
+                        const playingElement = document.getElementById(game.playingId);
+                        if (playingElement) playingElement.textContent = 'Error';
+                    }
+                }
+            }
+            
+            // Update the main counters
+            if (visitsElement && totalVisits > 0) {
+                visitsElement.textContent = formatNumber(totalVisits);
+            } else if (visitsElement) {
+                visitsElement.textContent = 'Error';
+            }
+
+            if (playerElement) {
+                playerElement.textContent = formatNumber(totalPlayers);
+            }
+
+            // Update the community counter
+            updateCommunityCounter();
+            
+        } catch (error) {
+            console.error('Error updating stats:', error);
+            // Show error state
+            const visitsElement = document.getElementById('visitsCounter');
+            const playerElement = document.getElementById('playerCounter');
+            if (visitsElement) visitsElement.textContent = 'Error';
+            if (playerElement) playerElement.textContent = 'Error';
+        }
+    }
+
+    // Background image shuffle functionality
+    function shuffleBackgrounds() {
+        const images = document.querySelectorAll('.hero-bg');
+        let currentImage = 0;
+        
+        function showNextImage() {
+            // Hide current image
+            images[currentImage].style.opacity = '0';
+            
+            // Move to next image (or loop back to first)
+            currentImage = (currentImage + 1) % images.length;
+            
+            // Show next image
+            images[currentImage].style.opacity = '1';
+        }
+        
+        // Start the shuffle effect (change image every 5 seconds)
+        setInterval(showNextImage, 5000);
+    }
+    
+    // Initialize everything when the page loads
+    window.addEventListener('load', () => {
+        // Start the background image shuffle
+        shuffleBackgrounds();
+        
+        const visitsElement = document.getElementById('visitsCounter');
+        if (visitsElement) {
+            visitsElement.textContent = 'Loading...';
+            
+            // Fetch stats immediately
+            fetchRobloxStats();
+            
+            // Update stats every 15 minutes
+            setInterval(fetchRobloxStats, 15 * 60 * 1000);
+        }
+    });
+    
+    // Member Counter Animation
+    function animateCounter(targetElement, finalValue, duration = 2000) {
+        const counter = document.getElementById(targetElement);
+        if (!counter) return;
+        
+        let startValue = 0;
+        const increment = Math.ceil(finalValue / 100);
+        const stepTime = Math.abs(Math.floor(duration / 100));
+        
+        const timer = setInterval(() => {
+            startValue += increment;
+            counter.textContent = startValue.toLocaleString();
+            
+            if (startValue >= finalValue) {
+                counter.textContent = finalValue.toLocaleString();
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+    
+   
+});
+    </script>
+   
+    <script>
+        // Security: Add nonce to inline scripts (you should generate a new one for each request in production)
+        const cspNonce = btoa(crypto.getRandomValues(new Uint8Array(16)).join('')).slice(0, 32);
+        document.querySelectorAll('script[nonce]').forEach(script => script.nonce = cspNonce);
+
+
+        // Security: Prevent form submission if no CSRF token
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            const csrfToken = document.getElementById('csrf_token')?.value;
+            if (!csrfToken) {
+                e.preventDefault();
+                console.error('CSRF token validation failed');
+                // You might want to show an error message to the user
+                return false;
+            }
+            // Add any additional form validation here
+            return true;
+        });
+
+        // Security: Sanitize any user input
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
+    </script>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyPolicyModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto m-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Privacy Policy</h2>
+                    <button id="closePrivacyModal" class="text-gray-400 hover:text-white">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-gray-300 mb-4">Last updated: June 27, 2025</p>
+                    
+                    <h3 class="text-xl font-semibold mt-6 mb-3">1. Information We Collect</h3>
+                    <p class="text-gray-300 mb-4">
+                        We collect information that you provide directly to us when you use our games and services. This may include:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-300 mb-4 space-y-2">
+                        <li>Account information (username, email, profile information)</li>
+                        <li>Gameplay data and statistics</li>
+                        <li>Device information and unique identifiers</li>
+                        <li>Log and usage data</li>
+                        <li>Cookies and similar tracking technologies</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">2. How We Use Your Information</h3>
+                    <p class="text-gray-300 mb-4">
+                        We use the information we collect to:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-300 mb-4 space-y-2">
+                        <li>Provide, maintain, and improve our games and services</li>
+                        <li>Develop new features and content</li>
+                        <li>Personalize your gaming experience</li>
+                        <li>Respond to your comments and questions</li>
+                        <li>Send you related information, including updates and security alerts</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">3. Information Sharing</h3>
+                    <p class="text-gray-300 mb-4">
+                        We do not share your personal information with third parties except in the following cases:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-300 mb-4 space-y-2">
+                        <li>With your consent</li>
+                        <li>For legal compliance and protection</li>
+                        <li>With service providers who assist in our operations</li>
+                        <li>In connection with a business transfer</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">4. Your Choices</h3>
+                    <p class="text-gray-300 mb-4">
+                        You have the right to:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-300 mb-4 space-y-2">
+                        <li>Access and update your account information</li>
+                        <li>Opt-out of promotional communications</li>
+                        <li>Request deletion of your data</li>
+                        <li>Disable cookies through your browser settings</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">5. Security</h3>
+                    <p class="text-gray-300 mb-4">
+                        We implement appropriate security measures to protect your information. However, no method of transmission over the internet is 100% secure.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">6. Changes to This Policy</h3>
+                    <p class="text-gray-300 mb-4">
+                        We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">7. Contact Us</h3>
+                    <p class="text-gray-300">
+                        If you have any questions about this Privacy Policy, please contact us at:
+                        <br>
+                        <a href="mailto:sharpvisionofficial@gmail.com" class="text-blue-400 hover:underline">sharpvisionofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Terms of Service Modal -->
-    <div id="terms-modal" class="fixed inset-0 bg-black/75 z-50 hidden flex items-center justify-center p-4">
-      <div class="rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto" style="background-color: var(--card-bg-darker);">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-white">Terms of Service</h3>
-            <button onclick="closeModal('terms-modal')" class="text-gray-400 hover:text-white">
-              <i class="ri-close-line text-2xl"></i>
-            </button>
-          </div>
-          <div class="prose prose-invert max-w-none">
-            <h4 class="text-lg font-semibold text-white mt-4">1. Acceptance of Terms</h4>
-            <p class="text-gray-300">By accessing or using our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
-            
-            <h4 class="text-lg font-semibold text-white mt-6">2. Description of Service</h4>
-            <p class="text-gray-300">We provide web design and development services. You understand and agree that the service is provided "as is" and we assume no responsibility for the timeliness, deletion, or failure to store any user communications or personalization settings.</p>
-            
-            <h4 class="text-lg font-semibold text-white mt-6">3. User Conduct</h4>
-            <p class="text-gray-300">You agree not to use the service to:</p>
-            <ul class="list-disc pl-6 text-gray-300 mt-2">
-              <li>Upload or transmit any content that is unlawful, harmful, or objectionable</li>
-              <li>Impersonate any person or entity</li>
-              <li>Interfere with or disrupt the service or servers</li>
-              <li>Violate any applicable laws or regulations</li>
-            </ul>
+    <div id="termsOfServiceModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto m-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Terms of Service</h2>
+                    <button id="closeTermsModal" class="text-gray-400 hover:text-white">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-gray-300 mb-4">Last updated: June 27, 2025</p>
+                    
+                    <h3 class="text-xl font-semibold mt-6 mb-3">1. Acceptance of Terms</h3>
+                    <p class="text-gray-300 mb-4">
+                        By accessing or using our games and services, you agree to be bound by these Terms of Service and our Privacy Policy.
+                    </p>
 
-            <h4 class="text-lg font-semibold text-white mt-6">4. Payment and Refunds</h4>
-            <p class="text-gray-300">All payments are due upon receipt. We offer refunds at our discretion. If you are not satisfied with our service, please contact us within 14 days of purchase to discuss potential refunds.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">2. Accounts</h3>
+                    <p class="text-gray-300 mb-4">
+                        When you create an account, you must provide accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials.
+                    </p>
 
-            <h4 class="text-lg font-semibold text-white mt-6">5. Intellectual Property</h4>
-            <p class="text-gray-300">All content included on this site, such as text, graphics, logos, and software, is the property of Rastria or its content suppliers and protected by international copyright laws.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">3. User Conduct</h3>
+                    <p class="text-gray-300 mb-4">
+                        You agree not to:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-300 mb-4 space-y-2">
+                        <li>Violate any laws or regulations</li>
+                        <li>Infringe on intellectual property rights</li>
+                        <li>Harass, abuse, or harm others</li>
+                        <li>Use cheats or exploits</li>
+                        <li>Attempt to gain unauthorized access to our systems</li>
+                    </ul>
 
-            <h4 class="text-lg font-semibold text-white mt-6">6. Limitation of Liability</h4>
-            <p class="text-gray-300">In no event shall Rastria, nor its directors, employees, or agents, be liable for any indirect, incidental, special, consequential or punitive damages resulting from your access to or use of, or inability to access or use, the service.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">4. Virtual Items and Currency</h3>
+                    <p class="text-gray-300 mb-4">
+                        Virtual items and currency have no real-world value and are non-transferable. All sales are final unless required by law.
+                    </p>
 
-            <h4 class="text-lg font-semibold text-white mt-6">7. Changes to Terms</h4>
-            <p class="text-gray-300">We reserve the right to modify these terms at any time. We will provide notice of any changes by posting the new terms on our website.</p>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">5. Termination</h3>
+                    <p class="text-gray-300 mb-4">
+                        We may terminate or suspend your account and access to our services at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users.
+                    </p>
 
-            <p class="text-gray-400 text-sm mt-8">Last updated: July 11, 2025</p>
-          </div>
+                    <h3 class="text-xl font-semibold mt-6 mb-3">6. Disclaimers</h3>
+                    <p class="text-gray-300 mb-4">
+                        Our services are provided "as is" without warranties of any kind. We do not guarantee that our services will be uninterrupted or error-free.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">7. Limitation of Liability</h3>
+                    <p class="text-gray-300 mb-4">
+                        To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising out of or in connection with your use of our services.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">8. Changes to Terms</h3>
+                    <p class="text-gray-300 mb-4">
+                        We reserve the right to modify these Terms at any time. We will provide notice of material changes through our services or by other means.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-3">9. Contact Us</h3>
+                    <p class="text-gray-300">
+                        If you have any questions about these Terms, please contact us at:
+                        <br>
+                        <a href="mailto:sharpvisionofficial@gmail.com" class="text-blue-400 hover:underline">sharpvisionofficial@gmail.com</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- Modal Script -->
+
     <script>
-      function openModal(modalId) {
-        document.getElementById(modalId).classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Privacy Policy Modal
+            const privacyModal = document.getElementById('privacyPolicyModal');
+            const privacyLink = document.getElementById('privacyPolicyLink');
+            const closePrivacyModal = document.getElementById('closePrivacyModal');
 
-      function closeModal(modalId) {
-        document.getElementById(modalId).classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-
-      // Close modal when clicking outside content
-      window.onclick = function(event) {
-        if (event.target.classList.contains('fixed')) {
-          event.target.classList.add('hidden');
-          document.body.style.overflow = 'auto';
-        }
-      }
-
-    </script>
-
-    <!-- Enhanced Feedback Form Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Elements
-        const feedbackForm = document.getElementById('feedbackForm');
-        const successMessage = document.getElementById('success-message');
-        const messageTextarea = document.getElementById('message');
-        const charCount = document.getElementById('char-count');
-        const bugFields = document.getElementById('bug-fields');
-        const tabButtons = document.querySelectorAll('[data-tab]');
-        const typeInput = document.getElementById('type');
-        
-        // Character counter for message field
-        if (messageTextarea && charCount) {
-          messageTextarea.addEventListener('input', function() {
-            const currentLength = this.value.length;
-            const maxLength = 1000;
-            
-            // Update character count
-            charCount.textContent = `${currentLength}/${maxLength}`;
-            
-            // Change color if approaching limit
-            if (currentLength > maxLength * 0.9) {
-              charCount.classList.add('text-red-500');
-              charCount.classList.remove('text-gray-500', 'dark:text-gray-400');
-            } else {
-              charCount.classList.remove('text-red-500');
-              charCount.classList.add('text-gray-500', 'dark:text-gray-400');
-            }
-            
-            // Enforce max length
-            if (currentLength > maxLength) {
-              this.value = this.value.substring(0, maxLength);
-            }
-          });
-          
-          // Initialize character count
-          messageTextarea.dispatchEvent(new Event('input'));
-        }
-        
-        // Tab switching functionality
-        if (tabButtons.length > 0) {
-          tabButtons.forEach(button => {
-            button.addEventListener('click', function() {
-              const tabName = this.getAttribute('data-tab');
-              
-              // Update active tab styling
-              tabButtons.forEach(btn => {
-                btn.classList.remove('border-blue-500', 'text-blue-600', 'dark:text-blue-400');
-                btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'dark:text-gray-400', 'dark:hover:text-gray-200');
-              });
-              this.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'dark:text-gray-400', 'dark:hover:text-gray-200');
-              this.classList.add('border-blue-500', 'text-blue-600', 'dark:text-blue-400');
-              
-              // Update form type
-              typeInput.value = tabName;
-              
-              // Toggle bug-specific fields
-              if (tabName === 'bug') {
-                bugFields.classList.remove('hidden');
-                bugFields.querySelectorAll('input, select, textarea').forEach(field => {
-                  field.required = true;
+            if (privacyLink && privacyModal && closePrivacyModal) {
+                privacyLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    privacyModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
                 });
-              } else {
-                bugFields.classList.add('hidden');
-                bugFields.querySelectorAll('input, select, textarea').forEach(field => {
-                  field.required = false;
+
+                closePrivacyModal.addEventListener('click', function() {
+                    privacyModal.classList.add('hidden');
+                    document.body.style.overflow = '';
                 });
-              }
-            });
-          });
-          
-          // Initialize first tab as active
-          tabButtons[0].click();
-        }
-        
-        // Form submission with validation
-        if (feedbackForm) {
-          feedbackForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Disable submit button to prevent multiple submissions
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
-            submitButton.disabled = true;
-            submitButton.innerHTML = `
-              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Sending...
-            `;
-            
-            try {
-              // Submit to Formspree
-              const formData = new FormData(this);
-              const response = await fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                  'Accept': 'application/json'
+
+                privacyModal.addEventListener('click', function(e) {
+                    if (e.target === privacyModal) {
+                        privacyModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Terms of Service Modal
+            const termsModal = document.getElementById('termsOfServiceModal');
+            const termsLink = document.getElementById('termsOfServiceLink');
+            const closeTermsModal = document.getElementById('closeTermsModal');
+
+            if (termsLink && termsModal && closeTermsModal) {
+                termsLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    termsModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeTermsModal.addEventListener('click', function() {
+                    termsModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+
+                termsModal.addEventListener('click', function(e) {
+                    if (e.target === termsModal) {
+                        termsModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Close modals with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (!privacyModal.classList.contains('hidden')) {
+                        privacyModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                    if (!termsModal.classList.contains('hidden')) {
+                        termsModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
                 }
-              });
-              
-              if (response.ok) {
-                // Show success message
-                feedbackForm.reset();
-                if (successMessage) {
-                  successMessage.classList.remove('hidden');
-                  successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  
-                  // Hide success message after 5 seconds
-                  setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                  }, 5000);
-                }
-              }
-            } catch (error) {
-              console.error('Error:', error);
-              // Show error message
-              alert('There was a problem submitting your feedback. Please try again.');
-            } finally {
-              // Re-enable submit button
-              submitButton.disabled = false;
-              submitButton.innerHTML = originalButtonText;
-            }
-          });
-        }
-        
-        // Auto-detect browser and OS for bug reports
-        if (bugFields) {
-          const browserInfo = {
-            name: '',
-            version: '',
-            os: ''
-          };
-          
-          // Simple browser detection
-          const userAgent = navigator.userAgent;
-          
-          // Detect browser
-          if (userAgent.indexOf('Firefox') > -1) {
-            browserInfo.name = 'Firefox';
-            browserInfo.version = userAgent.match(/Firefox\/(\d+\.?\d*)/)[1];
-          } else if (userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Chrome') === -1) {
-            browserInfo.name = 'Safari';
-            browserInfo.version = userAgent.match(/Version\/(\d+\.?\d*)/)[1];
-          } else if (userAgent.indexOf('Chrome') > -1) {
-            browserInfo.name = 'Chrome';
-            browserInfo.version = userAgent.match(/Chrome\/(\d+\.?\d*)/)[1];
-          } else if (userAgent.indexOf('Edge') > -1) {
-            browserInfo.name = 'Edge';
-            browserInfo.version = userAgent.match(/Edge\/(\d+\.?\d*)/)[1];
-          }
-          
-          // Detect OS
-          if (userAgent.indexOf('Windows') > -1) browserInfo.os = 'Windows';
-          else if (userAgent.indexOf('Mac') > -1) browserInfo.os = 'macOS';
-          else if (userAgent.indexOf('Linux') > -1) browserInfo.os = 'Linux';
-          else if (userAgent.indexOf('Android') > -1) browserInfo.os = 'Android';
-          else if (userAgent.indexOf('iOS') > -1 || userAgent.indexOf('iPhone') > -1 || userAgent.indexOf('iPad') > -1) browserInfo.os = 'iOS';
-          
-          // Auto-fill browser info
-          const browserField = document.getElementById('browser');
-          if (browserField && browserInfo.name) {
-            browserField.value = `${browserInfo.name} ${browserInfo.version || ''} (${browserInfo.os || 'Unknown OS'})`.trim();
-          }
-        }
-      });
-    </script>
-
-    <!-- Scripts -->
-    <script id="faq-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const faqItems = document.querySelectorAll(".faq-item");
-        faqItems.forEach((item) => {
-          const question = item.querySelector(".flex");
-          question.addEventListener("click", function () {
-            // Toggle active class
-            item.classList.toggle("active");
-          });
-        });
-      });
-    </script>
-    <script id="parallax-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        function isMobile() {
-          return window.innerWidth <= 768;
-        }
-        window.addEventListener("scroll", function () {
-          if (isMobile()) return; // Disable parallax on mobile
-          const scrollPosition = window.pageYOffset;
-          const hero = document.getElementById("hero");
-          if (hero) hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-          const starField = document.getElementById("star-field");
-          if (starField) starField.style.transform = `translateY(${scrollPosition * 0.2}px)`;
-        });
-      });
-    </script>
-    <script id="clothing-filter-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const categoryButtons = document.querySelectorAll(".category-btn");
-        const clothingItems = document.querySelectorAll(".clothing-card");
-        categoryButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            categoryButtons.forEach((btn) => btn.classList.remove("active"));
-            this.classList.add("active");
-            const category = this.getAttribute("data-category");
-            clothingItems.forEach((item) => {
-              const itemCategory = item.getAttribute("data-category");
-              if (category === "all") {
-                item.classList.remove("hidden");
-              } else if (itemCategory === category) {
-                item.classList.remove("hidden");
-              } else {
-                item.classList.add("hidden");
-              }
             });
-          });
         });
-      });
     </script>
-    <script id="hero-animation-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        // Hero section animations
-        const heroTitle = document.getElementById('hero-title');
-        const heroSubtitle = document.getElementById('hero-subtitle');
-        const heroCta = document.getElementById('hero-cta');
-        
-        // Animate hero elements with a slight delay between each
-        setTimeout(() => {
-          heroTitle.classList.add('opacity-100', 'translate-y-0');
-          heroTitle.classList.remove('opacity-0', 'translate-y-10');
-          
-          setTimeout(() => {
-            heroSubtitle.classList.add('opacity-100', 'translate-y-0');
-            heroSubtitle.classList.remove('opacity-0', 'translate-y-10');
-            
-            setTimeout(() => {
-              heroCta.classList.add('opacity-100', 'translate-y-0');
-              heroCta.classList.remove('opacity-0', 'translate-y-10');
-            }, 200);
-          }, 200);
-        }, 300);
-        
-        // Clothing popup functionality
-        const clothingItems = document.querySelectorAll('.clothing-card');
-        const popup = document.getElementById('clothing-popup');
-        const closeBtn = document.getElementById('close-popup');
-        const popupTitle = document.getElementById('popup-title');
-        const popupDescription = document.getElementById('popup-description');
-        const popupImage = document.getElementById('popup-image');
-        const popupColors = document.getElementById('popup-colors');
-        const popupPrice = document.getElementById('popup-price');
-
-        // Sample data for demonstration
-        const itemData = {
-          'north-face-jacket': {
-            title: 'North Face Jacket',
-            description: 'A classic North Face jacket featuring durable materials and comfortable fit, perfect for casual everyday wear.',
-            colors: ['#000000', '#1E3A8A', '#991B1B', '#1E40AF'],
-            price: '199.99',
-            image: 'url("https://images.unsplash.com/photo-1551028719-00167d1e8b7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80")'
-          },
-          'tradoc-polo': {
-            title: 'TRADOC Polo Shirt',
-            description: 'Classic polo design with modern comfort and professional look, ideal for both casual and semi-formal occasions.',
-            colors: ['#1E3A8A', '#1E40AF', '#3B82F6'],
-            price: '49.99',
-            image: 'url("https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80")'
-          },
-          // Add more items as needed
-        };
-
-        // Add click event to clothing items
-        clothingItems.forEach(item => {
-          item.addEventListener('click', (e) => {
-            const itemId = item.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
-            const data = itemData[itemId];
-            
-            if (data) {
-              popupTitle.textContent = data.title;
-              popupDescription.textContent = data.description;
-              popupPrice.textContent = `$${data.price}`;
-              popupImage.style.backgroundImage = data.image;
-              
-              // Clear previous colors
-              popupColors.innerHTML = '';
-              
-              // Add color swatches
-              data.colors.forEach(color => {
-                const colorSwatch = document.createElement('div');
-                colorSwatch.className = 'w-8 h-8 rounded-full cursor-pointer border-2 border-transparent hover:border-white transition-colors';
-                colorSwatch.style.backgroundColor = color;
-                popupColors.appendChild(colorSwatch);
-              });
-              
-              popup.classList.remove('hidden');
-              document.body.style.overflow = 'hidden';
-            }
-          });
-        });
-
-        // Close popup
-        closeBtn.addEventListener('click', () => {
-          popup.classList.add('hidden');
-          document.body.style.overflow = 'auto';
-        });
-
-        // Close when clicking outside content
-        popup.addEventListener('click', (e) => {
-          if (e.target === popup) {
-            popup.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-          }
-        });
-
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
-            popup.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-          }
-        });
-      });
+    
+    <!-- Security: Add Subresource Integrity (SRI) hashes for external scripts -->
+    <script src="https://cdn.tailwindcss.com/3.4.16" 
+            integrity="sha384-..." 
+            crossorigin="anonymous" 
+            nonce="">
     </script>
-    <!-- Reveal on Scroll Animation -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Get all sections except hero
-        const sections = document.querySelectorAll('section:not(#hero)');
-        
-        // Add reveal class to all sections
-        sections.forEach(section => {
-          section.classList.add('section-reveal');
-        });
+    
+    <!-- Security: Add Feature Policy Header (via meta tag as fallback) -->
+    <meta http-equiv="Feature-Policy" content="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'">
 
-        // Create Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('reveal-active');
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        });
 
-        // Observe each section
-        sections.forEach(section => {
-          observer.observe(section);
-        });
-      });
-    </script>
-    <script id="navigation-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        // Hamburger Mobile Menu Functionality
-        const hamburgerBtn = document.getElementById("hamburger-btn");
-        const sidebar = document.getElementById("mobile-sidebar");
-        const overlay = document.getElementById("mobile-sidebar-overlay");
-        const closeSidebarBtn = document.getElementById("close-sidebar-btn");
-        const focusableSelectors = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
-        let lastFocusedElement = null;
-
-        function openSidebar() {
-          sidebar.classList.add('open');
-          overlay.classList.add('open');
-          document.body.style.overflow = 'hidden';
-          lastFocusedElement = document.activeElement;
-          // Focus first link
-          setTimeout(() => {
-            const firstLink = sidebar.querySelector(focusableSelectors);
-            if (firstLink) firstLink.focus();
-          }, 100);
-        }
-        function closeSidebar() {
-          sidebar.classList.remove('open');
-          overlay.classList.remove('open');
-          document.body.style.overflow = 'auto';
-          if (lastFocusedElement) lastFocusedElement.focus();
-        }
-        hamburgerBtn && hamburgerBtn.addEventListener('click', openSidebar);
-        closeSidebarBtn && closeSidebarBtn.addEventListener('click', closeSidebar);
-        overlay && overlay.addEventListener('click', closeSidebar);
-        // Close on ESC
-        document.addEventListener('keydown', function(e) {
-          if (sidebar.classList.contains('open') && (e.key === 'Escape' || e.keyCode === 27)) {
-            closeSidebar();
-          }
-        });
-        // Focus trap
-        sidebar && sidebar.addEventListener('keydown', function(e) {
-          if (e.key !== 'Tab') return;
-          const focusableEls = sidebar.querySelectorAll(focusableSelectors);
-          if (!focusableEls.length) return;
-          const firstEl = focusableEls[0];
-          const lastEl = focusableEls[focusableEls.length - 1];
-          if (e.shiftKey) {
-            if (document.activeElement === firstEl) {
-              e.preventDefault();
-              lastEl.focus();
-            }
-          } else {
-            if (document.activeElement === lastEl) {
-              e.preventDefault();
-              firstEl.focus();
-            }
-          }
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
